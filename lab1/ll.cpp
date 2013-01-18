@@ -42,6 +42,7 @@ void ll::addtail(Student stu)
     temp->student = stu;
     temp->next = NULL;
     head->next = temp;
+    temp->student.display();
     return; 
   }  
 
@@ -57,6 +58,7 @@ void ll::addtail(Student stu)
   node *temp2 = new node;
   temp2->student = stu;
   temp2->next = NULL;
+  temp2->student.display();  
 
   temp->next = temp2;
   return;
