@@ -16,14 +16,11 @@ int main(int argc, char *argv[])
   string name = "Bob Whatshisface";
   string address = "123 Fake St";
   double gpa = 3.0;
-  list.getHead();
   Student bob(id,name,address,gpa);
 //  Student bob;
   list.addtail(bob);
-  list.getHead();
   Student jane;
   list.addtail(jane);
-  list.getHead();
   list.addtail(jane);
   list.addtail(jane);
   return 0;

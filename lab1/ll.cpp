@@ -65,8 +65,3 @@ void ll::addtail(Student stu)
 
 
 }
-
-void ll::getHead()
-{
-  cout << head << endl;
-}
