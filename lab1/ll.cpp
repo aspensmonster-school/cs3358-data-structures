@@ -1,10 +1,13 @@
 /* First implementation of linked list. Buggy. Only an idiot would use this. */
 
 #include "ll.h"
+#include <iostream>
 
 #ifndef NULL
 #define NULL 0
 #endif
+
+using namespace std;
 
 ll::ll()
 {
@@ -31,6 +34,17 @@ void ll::addtail(Student stu)
     return;
   }
 
+  /* add (first) to tail */
+  
+  if (head->next == NULL)
+  {
+    node *temp = new node;
+    temp->student = stu;
+    temp->next = NULL;
+    head->next = temp;
+    return; 
+  }  
+
   /* add to tail */
 
   node *temp = new node;
@@ -41,9 +55,16 @@ void ll::addtail(Student stu)
   }
 
   node *temp2 = new node;
-  //temp2->someValue = data;
+  temp2->student = stu;
   temp2->next = NULL;
 
   temp->next = temp2;
   return;
+
+
+}
+
+void ll::getHead()
+{
+  cout << head << endl;
 }

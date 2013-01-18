@@ -5,6 +5,7 @@
 #include "ll.h"
 #include <fstream>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -15,10 +16,15 @@ int main(int argc, char *argv[])
   string name = "Bob Whatshisface";
   string address = "123 Fake St";
   double gpa = 3.0;
-//  Student bob(id,name,address,gpa);
-  Student bob;
+  list.getHead();
+  Student bob(id,name,address,gpa);
+//  Student bob;
   list.addtail(bob);
-//  Student jane;
-//  list.addtail(jane);
+  list.getHead();
+  Student jane;
+  list.addtail(jane);
+  list.getHead();
+  list.addtail(jane);
+  list.addtail(jane);
   return 0;
 }

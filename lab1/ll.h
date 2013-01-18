@@ -22,7 +22,7 @@ class ll
 
     void addtail(Student);
     void deltail(); 
-
+    void getHead();
 };
 
 #endif
