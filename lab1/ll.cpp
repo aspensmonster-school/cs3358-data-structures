@@ -2,7 +2,9 @@
 
 #include "ll.h"
 
+#ifndef NULL
 #define NULL 0
+#endif
 
 ll::ll()
 {
@@ -21,7 +23,7 @@ void ll::addtail(int data)
   if (head == NULL)
   {
     node *temp = new node;
-    temp->someValue = data;
+    //temp->someValue = data;
     temp->next = NULL;
     head = temp;
     return;
@@ -37,7 +39,7 @@ void ll::addtail(int data)
   }
 
   node *temp2 = new node;
-  temp2->someValue = data;
+  //temp2->someValue = data;
   temp2->next = NULL;
 
   temp->next = temp2;

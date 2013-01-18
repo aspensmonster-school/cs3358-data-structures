@@ -1,3 +1,6 @@
+#ifndef student_h_
+#define student_h_
+
 /* This will be the student object */
 
 #include <string>
@@ -16,7 +19,7 @@ class Student
   public:
 
     Student();
-    Student(string,string,string,double);
+    Student(std::string,std::string,std::string,double);
     virtual ~Student();
     
     void display();
@@ -26,12 +29,12 @@ class Student
        appending.
     */
 
-    void setInfo(string,string,string,double);
+    void setInfo(std::string,std::string,std::string,double);
     void getInfo();
 
-    void setId(string);
-    void setName(string);
-    void setAddress(string);
+    void setId(std::string);
+    void setName(std::string);
+    void setAddress(std::string);
     void setGpa(double);
 
     void getId();
@@ -39,4 +42,6 @@ class Student
     void getAddress();
     void getGpa();
 
-}    
+};
+
+#endif

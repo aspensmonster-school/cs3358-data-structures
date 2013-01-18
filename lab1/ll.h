@@ -1,6 +1,8 @@
 #ifndef ll_h_
 #define ll_h_
 
+#include "student.h"
+
 class ll
 
 {
@@ -8,7 +10,7 @@ class ll
   private:
 
     struct node {
-      int someValue;
+      Student student;
       node *next;
     };
     node *head;
