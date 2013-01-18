@@ -16,7 +16,7 @@ ll::~ll()
 
 }
 
-void ll::addtail(int data)
+void ll::addtail(Student stu)
 {
   /* Test if empty list */
 
@@ -24,6 +24,8 @@ void ll::addtail(int data)
   {
     node *temp = new node;
     //temp->someValue = data;
+    temp->student = stu;
+    temp->student.display();
     temp->next = NULL;
     head = temp;
     return;

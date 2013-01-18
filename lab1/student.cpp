@@ -16,10 +16,10 @@ Student::Student()
 
 Student::Student(string id, string name, string address, double gpa)
 {
-  id = id;
-  name = name;
-  address = address;
-  gpa = gpa;
+  this->id = id;
+  this->name = name;
+  this->address = address;
+  this->gpa = gpa;
 }
 
 Student::~Student()
@@ -29,7 +29,10 @@ Student::~Student()
 
 void Student::display()
 {
-  cout << "display stub." << endl;
+  cout << "ID: " << id << endl;
+  cout << "Name: " << name << endl;
+  cout << "Address: " << address << endl;
+  cout << "GPA: " << gpa << endl;
 }
 
 void setInfo(string id, string name, string address, double gpa)
@@ -40,10 +43,12 @@ void setInfo(string id, string name, string address, double gpa)
   gpa = gpa;
 }
 
+/*
 void Student::getInfo()
 {
   cout << "getInfo() stub" << endl;
 }
+*/
 
 void Student::setId(string id)
 {

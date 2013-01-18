@@ -20,7 +20,7 @@ class ll
     ll();
     virtual ~ll();
 
-    void addtail(int);
+    void addtail(Student);
     void deltail(); 
 
 };

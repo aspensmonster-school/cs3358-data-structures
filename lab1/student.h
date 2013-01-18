@@ -30,7 +30,8 @@ class Student
     */
 
     void setInfo(std::string,std::string,std::string,double);
-    void getInfo();
+    //This won't actually work atm...
+    //void getInfo();
 
     void setId(std::string);
     void setName(std::string);

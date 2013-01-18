@@ -4,11 +4,21 @@
 
 #include "ll.h"
 #include <fstream>
+#include <string>
+
+using namespace std;
 
 int main(int argc, char *argv[])
 {
   ll list;
-  int test = 10;
-  list.addtail(test);
+  string id = "123";
+  string name = "Bob Whatshisface";
+  string address = "123 Fake St";
+  double gpa = 3.0;
+//  Student bob(id,name,address,gpa);
+  Student bob;
+  list.addtail(bob);
+//  Student jane;
+//  list.addtail(jane);
   return 0;
 }
