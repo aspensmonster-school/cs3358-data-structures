@@ -1,36 +1,45 @@
 /* First implementation of linked list. Buggy. Only an idiot would use this. */
 
-ll:ll()
+#include "ll.h"
+
+#define NULL 0
+
+ll::ll()
 {
-  *head = NULL;
+  head = NULL;
 }
 
-ll:addtail(int data)
+ll::~ll()
+{
+
+}
+
+void ll::addtail(int data)
 {
   /* Test if empty list */
 
-  if (*head = NULL)
+  if (head == NULL)
   {
-    node *temp;
-    temp.someValue = data;
-    temp.next = NULL;
+    node *temp = new node;
+    temp->someValue = data;
+    temp->next = NULL;
     head = temp;
     return;
   }
 
   /* add to tail */
 
-  node *temp;
+  node *temp = new node;
   temp = head;
-  while(*temp.next != NULL)
+  while(temp->next != NULL)
   {
-    temp = *temp.next;
+    temp = temp->next;
   }
 
-  node *temp2;
-  *temp2.someValue = temp;
-  *temp2.next = NULL;
+  node *temp2 = new node;
+  temp2->someValue = data;
+  temp2->next = NULL;
 
-  *temp.next = temp2;
+  temp->next = temp2;
   return;
 }
