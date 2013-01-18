@@ -37,9 +37,9 @@ class Student
     void setAddress(std::string);
     void setGpa(double);
 
-    string getId();
-    string getName();
-    string getAddress();
+    std::string getId();
+    std::string getName();
+    std::string getAddress();
     double getGpa();
 
 };
