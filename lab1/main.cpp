@@ -42,6 +42,8 @@ void addFileToList(ifstream& input,ll* list)
     Student temp(id,name,address,gpa);
     list->addtail(temp);
 
+    cout << "=====================================================" << endl;
+
   }
 
   input.seekg(0, ios::beg);
