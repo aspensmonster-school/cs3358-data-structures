@@ -63,5 +63,4 @@ void ll::addtail(Student stu)
   temp->next = temp2;
   return;
 
-
 }

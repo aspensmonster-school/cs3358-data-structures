@@ -6,22 +6,44 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
+void addFileToList(ifstream&,ll*);
+
 int main(int argc, char *argv[])
 {
-  ll list;
-  string id = "123";
-  string name = "Bob Whatshisface";
-  string address = "123 Fake St";
-  double gpa = 3.0;
-  Student bob(id,name,address,gpa);
-//  Student bob;
-  list.addtail(bob);
-  Student jane;
-  list.addtail(jane);
-  list.addtail(jane);
-  list.addtail(jane);
+
+  ll* list = new ll;
+  ifstream ifs;
+  ifs.open("input.txt"); 
+  addFileToList(ifs, list); 
+  delete list;
   return 0;
+
+}
+
+void addFileToList(ifstream& input,ll* list)
+{
+
+  while( input.good() && input.peek() != EOF )
+  {
+
+    string id,name,address,gpastring;
+    getline(input,id,';');
+    getline(input,name,';');
+    getline(input,address,';');
+    getline(input,gpastring,'\n');
+
+    double gpa;
+    gpa = atof(gpastring.c_str());
+
+    Student temp(id,name,address,gpa);
+    list->addtail(temp);
+
+  }
+
+  input.seekg(0, ios::beg);
+
 }
