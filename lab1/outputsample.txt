@@ -1,0 +1,107 @@
+# Compiled with the following command:
+# $ g++ -Wall -g *.cpp -o out
+# executed like so:
+# $ ./out
+
+#Output is below:
+$ ./out
+ID: 10859
+Name: Brittni Crawn
+Address: 1791 Avati Ct, San Jose, CA, 95131-2506
+GPA: 2.5
+=====================================================
+ID: 588
+Name: Marcellus Odien
+Address: 2510 Holly Brook Ln, Arlington, TX, 76006-6718
+GPA: 3.2
+=====================================================
+ID: 1935
+Name: Jacinto Nogueda
+Address: 515 W Seventh St, Erie, PA, 16502-1334
+GPA: 4
+=====================================================
+ID: 19317
+Name: Sindy Klickman
+Address: 3630 Gardens Pkwy, Palm Beach Gardens, FL, 33410-2779
+GPA: 0.3
+=====================================================
+ID: 29528
+Name: Kwilosz
+Address: 16600 Valderama Way, Edmond, OK, 73012-8925
+GPA: 2.1
+=====================================================
+ID: 18466
+Name: Larisa Alai
+Address: 260 N Lake Shore Way, Lake Alfred, FL, 33850-2036
+GPA: 3.7
+=====================================================
+ID: 14316
+Name: Tomika Cooey
+Address: 118 Black Duck Ct, Cambridge, MD, 21613-2912
+GPA: 3.7
+=====================================================
+ID: 6932
+Name: Tabetha Hollinghurst
+Address: 10410 Countrywood Ln, Hudson, FL, 34667-6683
+GPA: 1.9
+=====================================================
+ID: 32299
+Name: Lonna Dalee
+Address: 2112 Benson Ave, Apt 1, Brooklyn, NY, 11214-4912
+GPA: 3
+=====================================================
+ID: 30759
+Name: Ellsworth Buess
+Address: 60 Wilder St, Peterborough, NH, 03458-1067
+GPA: 4
+=====================================================
+ID: 32538
+Name: Loni Mildred
+Address: 9105 Arch Hill Ct, Richmond, VA, 23236-2725
+GPA: 2.5
+=====================================================
+ID: 16732
+Name: Trudie Memmo
+Address: 3418 Cypressdale Ct, Spring, TX, 77388-5175
+GPA: 2.2
+=====================================================
+ID: 5613
+Name: Hannelore Cernansy
+Address: 201 Holmes Rd, Apt 106, Holmes, PA, 19043-1431
+GPA: 3.9
+=====================================================
+ID: 7040
+Name: Derenthal
+Address: 2566 High Trail Ct, Chula Vista, CA, 91914-4151
+GPA: 3.6
+=====================================================
+ID: 8674
+Name: Wes Lichota
+Address: 2693 Bingham Dr, Upper Saint Clair, PA, 15241-3900
+GPA: 2.5
+=====================================================
+ID: 3028
+Name: Boyce Erdelt
+Address: 538 Elbridge Dr NW, Atlanta, GA, 30318-8138
+GPA: 2.5
+=====================================================
+ID: 3388
+Name: Retta Goreczny
+Address: 1300 Professional Dr, Ste 102, Myrtle Beach, SC, 29577-5768
+GPA: 2.5
+=====================================================
+ID: 24211
+Name: Eldridge Lammel
+Address: 11409 Sequoia Ln, Beltsville, MD, 20705-1464
+GPA: 3.4
+=====================================================
+ID: 11071
+Name: Jae Nabhan
+Address: 365 Pineapple St, Englewood, FL, 34223-2835
+GPA: 0.9
+=====================================================
+ID: 27126
+Name: Katharina Castiola
+Address: 706 N troy St, Chicago, IL, 60612-1034
+GPA: 3.2
+=====================================================
