@@ -22,7 +22,7 @@ list of student records.
      You may use Java if you wish. Please high light on the turn in if you do
 either or both.
 
-1 (B) [Make it a doubly linked list.]
+1 (B) [Make it a doubly linked list.] [display from back]
 
   f. Create a linked list of 20 student records.
 
