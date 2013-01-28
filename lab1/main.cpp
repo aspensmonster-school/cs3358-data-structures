@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
   ifs.open("input.txt");
   addFileToList(ifs, list);
 
-  list->displayContents();
+//  list->displayContents();
 
-  cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
+//  cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
 
   list->sortByName();
 

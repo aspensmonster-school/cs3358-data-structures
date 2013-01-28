@@ -1,4 +1,4 @@
-/* First implementation of linked list. Buggy. Only an idiot would use this. */
+/* Doubly Linked List */
 
 #include "ll.h"
 #include <iostream>
@@ -112,13 +112,27 @@ void ll::sortByName()
     head = lowest;
   }
 
-
+  cout << "FOUND LOWEST" << endl;
+  head->student.display();
+  lowest->student.display();
+  oldhead->student.display();
+  cout << &oldhead << endl;
+  cout << oldhead << endl;
+  cout << &(oldhead->next) << endl;
+  oldhead->next->student.display();
+  oldhead->next->next->student.display();
   /* Prep for rest of next pointer updating */
-  index = oldhead->next;
+  index = oldhead->next; 
+  cout << "1" << endl;
   oldhead->next = oldhead->next->next;
+  cout << "2" << endl;
   lowest = index;
+  cout << "3" << endl;
   node *worker = new node;
+  cout << "4" << endl;
   worker = head;
+
+  cout << "BEGINNING SORT" << endl;
 
   /*Establish the new pointers for a sorted list*/
   while(index != NULL)
@@ -149,7 +163,12 @@ void ll::sortByName()
     index = oldhead->next;
     oldhead->next = oldhead->next->next;  
     lowest = index;
+
+    cout << "FINISHED AN ITERATION OF SORT" << endl;
+ 
   }
+
+  cout << "DONE SORT" << endl;
 
   delete lowest;
   delete index;
