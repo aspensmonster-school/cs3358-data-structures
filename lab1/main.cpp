@@ -17,8 +17,15 @@ int main(int argc, char *argv[])
 
   ll* list = new ll;
   ifstream ifs;
-  ifs.open("input.txt"); 
-  addFileToList(ifs, list); 
+  ifs.open("input.txt");
+  addFileToList(ifs, list);
+
+  list->displayContents();
+
+  cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
+
+  list->sortByName();
+
   delete list;
   return 0;
 
@@ -41,8 +48,6 @@ void addFileToList(ifstream& input,ll* list)
 
     Student temp(id,name,address,gpa);
     list->addtail(temp);
-
-    cout << "=====================================================" << endl;
 
   }
 

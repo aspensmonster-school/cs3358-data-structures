@@ -22,6 +22,8 @@ class ll
 
     void addtail(Student);
     void deltail(); 
+    void sortByName();
+    void displayContents();
 };
 
 #endif

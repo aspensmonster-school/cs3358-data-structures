@@ -2,6 +2,7 @@
 
 #include "ll.h"
 #include <iostream>
+#include <string>
 
 #ifndef NULL
 #define NULL 0
@@ -28,9 +29,10 @@ void ll::addtail(Student stu)
     node *temp = new node;
     //temp->someValue = data;
     temp->student = stu;
-    temp->student.display();
+    //temp->student.display();
     temp->next = NULL;
     head = temp;
+//    delete temp;
     return;
   }
 
@@ -42,7 +44,8 @@ void ll::addtail(Student stu)
     temp->student = stu;
     temp->next = NULL;
     head->next = temp;
-    temp->student.display();
+    //temp->student.display();
+//    delete temp;
     return; 
   }  
 
@@ -58,9 +61,114 @@ void ll::addtail(Student stu)
   node *temp2 = new node;
   temp2->student = stu;
   temp2->next = NULL;
-  temp2->student.display();  
+  //temp2->student.display();  
 
   temp->next = temp2;
+
+//  delete temp;
+//  delete temp2;
+
   return;
 
 }
+
+void ll::sortByName()
+{
+  /* There's a bunch of different ways of going about this */
+
+  /* Check that we don't have an empty list */ 
+  if(head == NULL)
+  {
+    return;
+  }
+
+  /* Carry on otherwise */
+
+  node *oldhead = new node;
+  oldhead = head;
+  node *lowest = new node;
+  lowest = head;
+  node *index = new node;
+  index = head;
+
+  /* Establish the head of our sorted list */
+  while(index->next != NULL)
+  {
+    string name1 = index->student.getName(); 
+    string name2 = index->next->student.getName();
+      
+    if (name1.compare(name2) < 0)
+    {
+      /* name1 comes before name2, like it should */
+      index->next = index->next->next;
+    }
+    else
+    if (name1.compare(name2) > 0)
+    {
+      /* name1 comes after name2, need to swap the lowest eventually */
+      lowest = index->next;
+      index->next = index->next->next; 
+    }
+    head = lowest;
+  }
+
+
+  /* Prep for rest of next pointer updating */
+  index = oldhead->next;
+  oldhead->next = oldhead->next->next;
+  lowest = index;
+  node *worker = new node;
+  worker = head;
+
+  /*Establish the new pointers for a sorted list*/
+  while(index != NULL)
+  {
+
+    while(index->next != NULL)   
+    {
+      string name1 = index->student.getName();  
+      string name2 = index->next->student.getName();
+      
+      if (name1.compare(name2) < 0)
+      {
+        /* name1 comes before name2, like it should */
+        index->next = index->next->next;
+      }
+      else
+      if (name1.compare(name2) > 0)
+      {
+        /* name1 comes after name2, need to swap the lowest eventually */
+        lowest = index->next;
+        index->next = index->next->next;  
+      }
+    }
+
+    worker->next = lowest;
+    worker = worker->next;
+
+    index = oldhead->next;
+    oldhead->next = oldhead->next->next;  
+    lowest = index;
+  }
+
+  delete lowest;
+  delete index;
+  delete worker;
+  delete oldhead;
+}
+
+void ll::displayContents()
+{
+  node *temp = new node;
+  temp = head;
+  
+  while(temp != NULL)
+  {
+    temp->student.display();
+    temp = temp->next;
+  }
+
+  delete temp;
+
+}
+
