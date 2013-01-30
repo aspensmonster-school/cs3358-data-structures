@@ -115,9 +115,9 @@ void ll::sortByName()
   }
 
   cout << "FOUND LOWEST" << endl;
-  head->student.display();
-  lowest->student.display();
-  oldhead->student.display();
+//  head->student.display();
+//  lowest->student.display();
+//  oldhead->student.display();
 //  cout << &oldhead << endl;
 //  cout << oldhead << endl;
 //  cout << &(oldhead->next) << endl;
@@ -125,13 +125,13 @@ void ll::sortByName()
 //  oldhead->next->next->student.display();
   /* Prep for rest of next pointer updating */
   index = oldhead->next; 
-  cout << "1" << endl;
-  oldhead->next = oldhead->next->next;
-  cout << "2" << endl;
+//  cout << "1" << endl;
+  //oldhead->next = oldhead->next->next;
+//  cout << "2" << endl;
   lowest = index;
-  cout << "3" << endl;
+//  cout << "3" << endl;
   node *worker = new node;
-  cout << "4" << endl;
+//  cout << "4" << endl;
   worker = head;
 
   cout << "BEGINNING SORT" << endl;
@@ -142,6 +142,12 @@ void ll::sortByName()
 
     while(index->next != NULL)   
     {
+
+      if(index->next == lowest)
+      {
+        /* well... shit. I don't think this is gonna work. */
+      }
+
       string name1 = index->student.getName();  
       string name2 = index->next->student.getName();
       
@@ -159,13 +165,16 @@ void ll::sortByName()
         //index->next = index->next->next;  
         index = index->next;
       }
+      cout << "LOL COMPARE" << endl;
     }
 
     worker->next = lowest;
     worker = worker->next;
 
+    //index = oldhead->next;
     index = oldhead->next;
-    oldhead->next = oldhead->next->next;  
+    //oldhead->next = oldhead->next->next;  
+    oldhead = oldhead->next;
     lowest = index;
 
     cout << "FINISHED AN ITERATION OF SORT" << endl;
