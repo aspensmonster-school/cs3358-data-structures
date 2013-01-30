@@ -100,14 +100,16 @@ void ll::sortByName()
     if (name1.compare(name2) < 0)
     {
       /* name1 comes before name2, like it should */
-      index->next = index->next->next; /* <-- This is why you're wrong */
+      //index->next = index->next->next; /* <-- This is why you're wrong */
+      index = index->next;
     }
     else
     if (name1.compare(name2) > 0)
     {
       /* name1 comes after name2, need to swap the lowest eventually */
       lowest = index->next;
-      index->next = index->next->next; /* <-- This is why you're wrong */ 
+      //index->next = index->next->next; /* <-- This is why you're wrong */ 
+      index = index->next;
     }
     head = lowest;
   }
