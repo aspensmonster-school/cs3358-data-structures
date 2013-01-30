@@ -116,11 +116,11 @@ void ll::sortByName()
   head->student.display();
   lowest->student.display();
   oldhead->student.display();
-  cout << &oldhead << endl;
-  cout << oldhead << endl;
-  cout << &(oldhead->next) << endl;
-  oldhead->next->student.display();
-  oldhead->next->next->student.display();
+//  cout << &oldhead << endl;
+//  cout << oldhead << endl;
+//  cout << &(oldhead->next) << endl;
+//  oldhead->next->student.display();
+//  oldhead->next->next->student.display();
   /* Prep for rest of next pointer updating */
   index = oldhead->next; 
   cout << "1" << endl;
