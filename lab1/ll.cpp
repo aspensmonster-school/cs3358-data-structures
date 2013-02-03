@@ -79,7 +79,7 @@ void ll::deleteListContents()
 //  node *temp;
 //  temp = head;
 
-node *temp = new node;
+node *temp;
 
     while(head->next != NULL)
     {
@@ -94,7 +94,7 @@ node *temp = new node;
       cout << "Success." << endl;
     
     }
-  
+
   delete head;
   head = NULL;
 
