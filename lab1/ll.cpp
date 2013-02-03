@@ -1,5 +1,7 @@
 /* Doubly Linked List */
 
+/* Turning into doubly linked list. */
+
 #include "ll.h"
 #include <iostream>
 #include <string>
