@@ -15,17 +15,19 @@ using namespace std;
 ll::ll()
 {
   head = NULL;
+  tail = NULL;
 }
 
 ll::~ll()
 {
-
+  delete head;
+  delete tail;
 }
 
-void ll::addtail(Student stu)
+void ll::insertTail(Student stu)
 {
-  /* Test if empty list */
 
+  /* Test if empty list */
   if (head == NULL)
   {
     node *temp = new node;
@@ -34,7 +36,6 @@ void ll::addtail(Student stu)
     //temp->student.display();
     temp->next = NULL;
     head = temp;
-//    delete temp;
     return;
   }
 

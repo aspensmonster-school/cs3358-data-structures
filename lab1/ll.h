@@ -12,18 +12,30 @@ class ll
     struct node {
       Student student;
       node *next;
+      node *prev;
+      ~node(){delete next; delete prev;}
     };
     node *head;
+    node *tail;
 
   public:
 
     ll();
     virtual ~ll();
 
-    void addtail(Student);
-    void deltail(); 
+    void insertTail(Student);
+    void insertHead(Student);
+    void insert(Student,int);
+    void insert(Student);
+
+    void removeTail();
+    void removeHead();
+    void remove(int);
+    void remove();
+    
     void sortByName();
     void displayContents();
+
 };
 
 #endif
