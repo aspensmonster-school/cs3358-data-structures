@@ -53,9 +53,7 @@ void ll::insertTail(Student* stu)
   }  
 
   /* add to tail */
-  else 
-  {
-  node *temp = new node;
+  node *temp;
   temp = head;
   while(temp->next != NULL)
   {
@@ -68,7 +66,6 @@ void ll::insertTail(Student* stu)
   //temp2->student.display();  
 
   temp->next = temp2;
-  }
 //  delete temp;
 //  delete temp2;
 
