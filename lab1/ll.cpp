@@ -40,7 +40,7 @@ void ll::insertTail(Student* stu)
   }
 
   /* add (first) to tail */
-  
+  else  
   if (head->next == NULL)
   {
     node *temp = new node;
@@ -53,7 +53,8 @@ void ll::insertTail(Student* stu)
   }  
 
   /* add to tail */
-
+  else 
+  {
   node *temp = new node;
   temp = head;
   while(temp->next != NULL)
@@ -67,7 +68,7 @@ void ll::insertTail(Student* stu)
   //temp2->student.display();  
 
   temp->next = temp2;
-
+  }
 //  delete temp;
 //  delete temp2;
 
@@ -81,10 +82,12 @@ void ll::deleteListContents()
 //  node *temp;
 //  temp = head;
 
+node *temp = new node;
+
     while(head->next != NULL)
     {
      
-      node *temp = new node; 
+//      node *temp = new node; 
       temp = head->next;
       cout << "temp is: " << temp << endl;
       cout << "head->next is: " << head->next << endl;
@@ -94,7 +97,7 @@ void ll::deleteListContents()
       cout << "Success." << endl;
     
     }
-
+  
   delete head;
   head = NULL;
 
@@ -219,7 +222,8 @@ void ll::sortByName()
 
 void ll::displayContents()
 {
-  node *temp = new node;
+
+  node *temp;
   temp = head;
   
   while(temp != NULL)
@@ -227,8 +231,6 @@ void ll::displayContents()
     temp->student->display();
     temp = temp->next;
   }
-
-  delete temp;
 
 }
 
