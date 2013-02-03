@@ -2,6 +2,9 @@
 #define ll_h_
 
 #include "student.h"
+#include <iostream>
+
+using namespace std;
 
 class ll
 
@@ -10,10 +13,10 @@ class ll
   private:
 
     struct node {
-      Student student;
+      Student *student;
       node *next;
       node *prev;
-      ~node(){delete next; delete prev;}
+      ~node(){cout << "Deleting node" << endl; delete student; /*delete next; delete prev;*/};
     };
     node *head;
     node *tail;
@@ -23,7 +26,7 @@ class ll
     ll();
     virtual ~ll();
 
-    void insertTail(Student);
+    void insertTail(Student*);
     void insertHead(Student);
     void insert(Student,int);
     void insert(Student);
@@ -32,6 +35,8 @@ class ll
     void removeHead();
     void remove(int);
     void remove();
+
+    void deleteListContents();
     
     void sortByName();
     void displayContents();

@@ -24,7 +24,7 @@ Student::Student(string id, string name, string address, double gpa)
 
 Student::~Student()
 {
-
+  cout << "Student destructor called." << endl;
 }
 
 void Student::display()

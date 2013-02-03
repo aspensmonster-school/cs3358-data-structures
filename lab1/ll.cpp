@@ -24,7 +24,7 @@ ll::~ll()
   delete tail;
 }
 
-void ll::insertTail(Student stu)
+void ll::insertTail(Student* stu)
 {
 
   /* Test if empty list */
@@ -75,6 +75,31 @@ void ll::insertTail(Student stu)
 
 }
 
+void ll::deleteListContents()
+{
+    
+//  node *temp;
+//  temp = head;
+
+    while(head->next != NULL)
+    {
+     
+      node *temp = new node; 
+      temp = head->next;
+      cout << "temp is: " << temp << endl;
+      cout << "head->next is: " << head->next << endl;
+      head->next = temp->next;
+      cout << "Deleting temp" << endl;
+      delete temp;
+      cout << "Success." << endl;
+    
+    }
+
+  delete head;
+  head = NULL;
+
+}
+
 void ll::sortByName()
 {
   /* There's a bunch of different ways of going about this */
@@ -97,8 +122,8 @@ void ll::sortByName()
   /* Establish the head of our sorted list */
   while(index->next != NULL)
   {
-    string name1 = index->student.getName(); 
-    string name2 = index->next->student.getName();
+    string name1 = index->student->getName(); 
+    string name2 = index->next->student->getName();
       
     if (name1.compare(name2) < 0)
     {
@@ -151,8 +176,8 @@ void ll::sortByName()
         /* well... shit. I don't think this is gonna work. */
       }
 
-      string name1 = index->student.getName();  
-      string name2 = index->next->student.getName();
+      string name1 = index->student->getName();  
+      string name2 = index->next->student->getName();
       
       if (name1.compare(name2) < 0)
       {
@@ -199,7 +224,7 @@ void ll::displayContents()
   
   while(temp != NULL)
   {
-    temp->student.display();
+    temp->student->display();
     temp = temp->next;
   }
 
