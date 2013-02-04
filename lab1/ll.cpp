@@ -72,6 +72,41 @@ void ll::insertTail(Student* stu)
 
 }
 
+void ll::insert(Student* stu,int slot)
+{
+
+  /* Cycle through 'til we get to the slot */
+  int i = 1;
+  node *temp;
+  temp = head;
+
+  while(temp != NULL && i < slot)
+  {
+    i++;
+    temp = temp->next;
+  }
+
+  /* temp is now pointing at the slot we wish to insert at ideally*/
+
+  if( i < slot)
+  {
+    cout << "Don't have that many slots, adding to tail." << endl;
+    insertAtTail(stu);
+    return;
+  }
+
+  node *add = new node;
+  add->student = stu;
+  add->next = temp;
+  add->prev = temp->prev; 
+
+  /* Now update other elements */ 
+
+  temp->prev->next = add;
+  temp->prev = add; 
+
+}
+
 void ll::deleteListContents()
 {
     
