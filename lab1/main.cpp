@@ -40,7 +40,12 @@ int main(int argc, char *argv[])
 
 //  list->sortByName();
 
+  cout << "We will now delete the list. " << endl;
+
   delete list;
+
+  cout << "List deleted." << endl;
+
   return 0;
 
 }

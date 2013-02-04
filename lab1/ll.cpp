@@ -1,7 +1,5 @@
 /* Doubly Linked List */
 
-/* Turning into doubly linked list. */
-
 #include "ll.h"
 #include <iostream>
 #include <string>
@@ -20,8 +18,10 @@ ll::ll()
 
 ll::~ll()
 {
+
   delete head;
   delete tail;
+
 }
 
 void ll::insertTail(Student* stu)
@@ -31,11 +31,11 @@ void ll::insertTail(Student* stu)
   if (head == NULL)
   {
     node *temp = new node;
-    //temp->someValue = data;
     temp->student = stu;
-    //temp->student.display();
     temp->next = NULL;
+    temp->prev = NULL;
     head = temp;
+    tail = temp;
     return;
   }
 
@@ -46,9 +46,9 @@ void ll::insertTail(Student* stu)
     node *temp = new node;
     temp->student = stu;
     temp->next = NULL;
+    temp->prev = head;
     head->next = temp;
-    //temp->student.display();
-//    delete temp;
+    tail = temp;
     return; 
   }  
 
@@ -62,12 +62,10 @@ void ll::insertTail(Student* stu)
 
   node *temp2 = new node;
   temp2->student = stu;
+  temp2->prev = temp;
   temp2->next = NULL;
-  //temp2->student.display();  
-
   temp->next = temp2;
-//  delete temp;
-//  delete temp2;
+  tail = temp2;
 
   return;
 
@@ -76,27 +74,25 @@ void ll::insertTail(Student* stu)
 void ll::deleteListContents()
 {
     
-//  node *temp;
-//  temp = head;
-
 node *temp;
 
-    while(head->next != NULL)
+    while(head->next != NULL && head != NULL)
     {
      
-//      node *temp = new node; 
       temp = head->next;
-      cout << "temp is: " << temp << endl;
-      cout << "head->next is: " << head->next << endl;
       head->next = temp->next;
-      cout << "Deleting temp" << endl;
       delete temp;
-      cout << "Success." << endl;
     
     }
 
   delete head;
   head = NULL;
+  
+  /* Don't need to delete tail. We deleted its contents in the while loop
+   * above
+   */
+
+  tail = NULL;
 
 }
 
@@ -223,11 +219,16 @@ void ll::displayContents()
   node *temp;
   temp = head;
   
+  cout << "Displaying..." << endl;  
+  cout << "temp should be null after deletion... " << temp << endl;
+ 
   while(temp != NULL)
   {
     temp->student->display();
     temp = temp->next;
   }
+
+  cout << "We've finished displayContents() " << endl;
 
 }
 
