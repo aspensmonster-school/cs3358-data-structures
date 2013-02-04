@@ -27,25 +27,29 @@ int main(int argc, char *argv[])
   cout << "\n\nCONTENTS DISPLAYED\n\n";
   cout << "\n\nDELETING LIST ELEMENTS\n\n";
 
+  delete list;
+
+/*
+
   list->deleteListContents();
 
   cout << "\n\nLIST ELEMENTS DELETED\n\n";
   cout << "\n\nDISPLAYING CONTENTS\n\n";
 
   list->displayContents();
-
+*/
 //  list->displayContents();
 
 //  cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
 
 //  list->sortByName();
-
+/*
   cout << "We will now delete the list. " << endl;
 
   delete list;
 
   cout << "List deleted." << endl;
-
+*/
   return 0;
 
 }

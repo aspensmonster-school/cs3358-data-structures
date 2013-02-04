@@ -19,6 +19,7 @@ ll::ll()
 ll::~ll()
 {
 
+  deleteListContents();
   delete head;
   delete tail;
 
