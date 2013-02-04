@@ -23,7 +23,7 @@ possible, instead opting to store both the linked list object itself, as well
 as the Student objects, in the heap. We create a linked list object on the
 heap:
 
-`ll* list = new ll`
+`ll* list = new ll;`
 
 and we add student objects in the same manner:
 
