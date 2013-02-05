@@ -27,6 +27,17 @@ int main(int argc, char *argv[])
   cout << "\n\nCONTENTS DISPLAYED\n\n";
   cout << "\n\nDELETING LIST ELEMENTS\n\n";
 
+  list->deleteListContents();
+  list->deleteListContents();
+
+  addFileToList(ifs, list);
+
+  list->displayContents();
+  
+  list->deleteListContents();
+  list->deleteListContents();
+  list->deleteListContents();
+
   delete list;
 
 /*
@@ -74,6 +85,7 @@ void addFileToList(ifstream& input,ll* list)
 
   }
 
+  /* Put ifs seeker back to beginning of file stream */
   input.seekg(0, ios::beg);
 
 }

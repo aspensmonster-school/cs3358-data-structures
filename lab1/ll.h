@@ -19,7 +19,7 @@ class ll
       ~node(){cout << "Deleting node" << endl; delete student; /*delete next; delete prev;*/};
     };
     node *head;
-    node *tail;
+//    node *tail;
 
   public:
 
@@ -28,8 +28,8 @@ class ll
 
     void insertTail(Student*);
     void insertHead(Student);
-    void insert(Student,int);
-    void insert(Student);
+    void insert(Student*,int);
+    void insert(Student*);
 
     void removeTail();
     void removeHead();

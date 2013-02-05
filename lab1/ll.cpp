@@ -13,7 +13,7 @@ using namespace std;
 ll::ll()
 {
   head = NULL;
-  tail = NULL;
+//  tail = NULL;
 }
 
 ll::~ll()
@@ -21,7 +21,7 @@ ll::~ll()
 
   deleteListContents();
   delete head;
-  delete tail;
+//  delete tail;
 
 }
 
@@ -36,7 +36,7 @@ void ll::insertTail(Student* stu)
     temp->next = NULL;
     temp->prev = NULL;
     head = temp;
-    tail = temp;
+    //tail = temp;
     return;
   }
 
@@ -49,7 +49,7 @@ void ll::insertTail(Student* stu)
     temp->next = NULL;
     temp->prev = head;
     head->next = temp;
-    tail = temp;
+    //tail = temp;
     return; 
   }  
 
@@ -66,7 +66,7 @@ void ll::insertTail(Student* stu)
   temp2->prev = temp;
   temp2->next = NULL;
   temp->next = temp2;
-  tail = temp2;
+  //tail = temp2;
 
   return;
 
@@ -74,6 +74,19 @@ void ll::insertTail(Student* stu)
 
 void ll::insert(Student* stu,int slot)
 {
+
+  /* Test if empty list */
+  if (head == NULL)
+  {
+    cout << "List was empty. Creating head." << endl;
+    node *temp = new node;
+    temp->student = stu;
+    temp->next = NULL;
+    temp->prev = NULL;
+    head = temp;
+    //tail = temp;
+    return;
+  }
 
   /* Cycle through 'til we get to the slot */
   int i = 1;
@@ -91,7 +104,7 @@ void ll::insert(Student* stu,int slot)
   if( i < slot)
   {
     cout << "Don't have that many slots, adding to tail." << endl;
-    insertAtTail(stu);
+    insertTail(stu);
     return;
   }
 
@@ -109,17 +122,27 @@ void ll::insert(Student* stu,int slot)
 
 void ll::deleteListContents()
 {
-    
-node *temp;
+   
+  if(head == NULL)
+  {
+    cout << "Empty list. Nothing to delete." << endl;
+    return;
+    /* What if head get's set to NULL inappropriately? Then
+     * memory still isn't free'd and we can't get to it!
+     * Gotta make sure that doesn't happen.
+     */
+  }
+ 
+  node *temp;
 
-    while(head->next != NULL && head != NULL)
-    {
-     
-      temp = head->next;
-      head->next = temp->next;
-      delete temp;
+  while(head->next != NULL) 
+  {
+   
+    temp = head->next;
+    head->next = temp->next;
+    delete temp;
     
-    }
+  }
 
   delete head;
   head = NULL;
@@ -128,125 +151,15 @@ node *temp;
    * above
    */
 
-  tail = NULL;
+//  tail = NULL;
 
 }
 
 void ll::sortByName()
 {
-  /* There's a bunch of different ways of going about this */
 
-  /* Check that we don't have an empty list */ 
-  if(head == NULL)
-  {
-    return;
-  }
+  cout << "Sorting Stub" << endl;
 
-  /* Carry on otherwise */
-
-  node *oldhead = new node;
-  oldhead = head;
-  node *lowest = new node;
-  lowest = head;
-  node *index = new node;
-  index = head;
-
-  /* Establish the head of our sorted list */
-  while(index->next != NULL)
-  {
-    string name1 = index->student->getName(); 
-    string name2 = index->next->student->getName();
-      
-    if (name1.compare(name2) < 0)
-    {
-      /* name1 comes before name2, like it should */
-      //index->next = index->next->next; /* <-- This is why you're wrong */
-      index = index->next;
-    }
-    else
-    if (name1.compare(name2) > 0)
-    {
-      /* name1 comes after name2, need to swap the lowest eventually */
-      lowest = index->next;
-      //index->next = index->next->next; /* <-- This is why you're wrong */ 
-      index = index->next;
-    }
-    head = lowest;
-  }
-
-  cout << "FOUND LOWEST" << endl;
-//  head->student.display();
-//  lowest->student.display();
-//  oldhead->student.display();
-//  cout << &oldhead << endl;
-//  cout << oldhead << endl;
-//  cout << &(oldhead->next) << endl;
-//  oldhead->next->student.display();
-//  oldhead->next->next->student.display();
-  /* Prep for rest of next pointer updating */
-  index = oldhead->next; 
-//  cout << "1" << endl;
-  //oldhead->next = oldhead->next->next;
-//  cout << "2" << endl;
-  lowest = index;
-//  cout << "3" << endl;
-  node *worker = new node;
-//  cout << "4" << endl;
-  worker = head;
-
-  cout << "BEGINNING SORT" << endl;
-
-  /*Establish the new pointers for a sorted list*/
-  while(index != NULL)
-  {
-
-    while(index->next != NULL)   
-    {
-
-      if(index->next == lowest)
-      {
-        /* well... shit. I don't think this is gonna work. */
-      }
-
-      string name1 = index->student->getName();  
-      string name2 = index->next->student->getName();
-      
-      if (name1.compare(name2) < 0)
-      {
-        /* name1 comes before name2, like it should */
-        //index->next = index->next->next;
-        index = index->next;
-      }
-      else
-      if (name1.compare(name2) > 0)
-      {
-        /* name1 comes after name2, need to swap the lowest eventually */
-        lowest = index->next;
-        //index->next = index->next->next;  
-        index = index->next;
-      }
-      cout << "LOL COMPARE" << endl;
-    }
-
-    worker->next = lowest;
-    worker = worker->next;
-
-    //index = oldhead->next;
-    index = oldhead->next;
-    //oldhead->next = oldhead->next->next;  
-    oldhead = oldhead->next;
-    lowest = index;
-
-    cout << "FINISHED AN ITERATION OF SORT" << endl;
- 
-  }
-
-  cout << "DONE SORT" << endl;
-
-  delete lowest;
-  delete index;
-  delete worker;
-  delete oldhead;
 }
 
 void ll::displayContents()
