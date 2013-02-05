@@ -30,7 +30,11 @@ int main(int argc, char *argv[])
   list->deleteListContents();
   list->deleteListContents();
 
-  addFileToList(ifs, list);
+  /* Let's try to crash our program! */
+  for(int i = 0; i < 10000 ; i++)
+  {
+    addFileToList(ifs, list);
+  }
 
   list->displayContents();
   
