@@ -27,7 +27,7 @@ class ll
     virtual ~ll();
 
     void insertTail(Student*);
-    void insertHead(Student);
+    void insertHead(Student*);
     void insert(Student*,int);
     void insert(Student*);
 

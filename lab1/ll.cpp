@@ -72,6 +72,34 @@ void ll::insertTail(Student* stu)
 
 }
 
+void ll::insertHead(Student *stu)
+{
+
+  /* Test for empty list */  
+  if (head == NULL)
+  {
+    node *temp = new node;
+    temp->student = stu;
+    temp->next = NULL;
+    temp->prev = NULL;
+    head = temp;
+    //tail = temp;
+    return;
+  }
+
+  /* If list isn't empty, do this */
+  else
+  {
+    node *temp = new node;
+    temp->student = stu;
+    head->prev = temp;
+    temp->next = head;
+    temp->prev = NULL;
+    head = temp;
+  }
+
+}
+
 void ll::insert(Student* stu,int slot)
 {
 

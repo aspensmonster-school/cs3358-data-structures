@@ -81,7 +81,8 @@ void addFileToList(ifstream& input,ll* list)
     gpa = atof(gpastring.c_str());
 
     Student *temp = new Student(id,name,address,gpa);
-    list->insertTail(temp);
+//    list->insertTail(temp);
+    list->insertHead(temp);
 
   }
 
