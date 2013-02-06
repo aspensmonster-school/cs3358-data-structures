@@ -16,7 +16,7 @@ class ll
       Student *student;
       node *next;
       node *prev;
-      ~node(){cout << "Deleting node" << endl; delete student; /*delete next; delete prev;*/};
+      ~node(){delete student;} 
     };
     node *head;
 //    node *tail;
