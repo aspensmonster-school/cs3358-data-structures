@@ -56,6 +56,13 @@ int main(int argc, char *argv[])
   Student* middle = new Student();
   list->insert(middle,6);
 
+  /* TODO: if the user inserts the same Student object into the list
+   * multiple times, the program segfaults because two nodes are ref-
+   * erencing the same memory spot. So when we go to delete the second
+   * instance in the list a la `delete foo` the program barfs because
+   * we're trying to delete memory that's already deleted!
+   */
+
   Student* farout = new Student();
   list->insert(farout,100);
 
