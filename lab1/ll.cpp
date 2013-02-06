@@ -18,7 +18,7 @@ ll::ll()
 
 ll::~ll()
 {
-
+  cout << "Called ll destructor" << endl;
   deleteListContents();
   delete head;
 //  delete tail;
@@ -116,6 +116,13 @@ void ll::insert(Student* stu,int slot)
     return;
   }
 
+  if (slot == 1)
+  {
+    cout << "Slot " << slot << " is the head of the list." << endl;
+    insertHead(stu);
+    return;
+  }
+
   /* Cycle through 'til we get to the slot */
   int i = 1;
   node *temp;
@@ -129,6 +136,7 @@ void ll::insert(Student* stu,int slot)
 
   /* temp is now pointing at the slot we wish to insert at ideally*/
 
+  /* Test if the slot the user asked for exists */
   if( i < slot)
   {
     cout << "Don't have that many slots, adding to tail." << endl;
@@ -150,7 +158,9 @@ void ll::insert(Student* stu,int slot)
 
 void ll::deleteListContents()
 {
-   
+  
+  cout << "Deleting list..." << endl;
+ 
   if(head == NULL)
   {
     cout << "Empty list. Nothing to delete." << endl;
@@ -172,9 +182,13 @@ void ll::deleteListContents()
     
   }
 
+  cout << "Attempting to delete head... " << endl;
+
   delete head;
   head = NULL;
-  
+ 
+  cout << "Head deleted." << endl;
+ 
   /* Don't need to delete tail. We deleted its contents in the while loop
    * above
    */

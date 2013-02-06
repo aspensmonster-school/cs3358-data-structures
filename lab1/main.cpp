@@ -30,8 +30,7 @@ int main(int argc, char *argv[])
   list->deleteListContents();
   list->deleteListContents();
 
-  /* Let's try to crash our program! */
-  for(int i = 0; i < 10000 ; i++)
+  for(int i = 0; i < 2 ; i++)
   {
     addFileToList(ifs, list);
   }
@@ -41,6 +40,26 @@ int main(int argc, char *argv[])
   list->deleteListContents();
   list->deleteListContents();
   list->deleteListContents();
+
+  cout << "Putting insert() through its paces." << endl;
+
+  Student* empty = new Student();
+  list->insert(empty,10);
+
+  list->deleteListContents();
+
+  addFileToList(ifs, list);
+
+  Student* newhead = new Student();
+  list->insert(newhead,1);
+
+  Student* middle = new Student();
+  list->insert(middle,6);
+
+  Student* farout = new Student();
+  list->insert(farout,100);
+
+  cout << "Completed insertion paces." << endl;
 
   delete list;
 
