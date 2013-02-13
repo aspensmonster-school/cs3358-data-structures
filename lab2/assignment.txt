@@ -1,6 +1,6 @@
 Project 2
 
-(A)Static Stack
+(A) Static Stack
 
 Create an array of student records (at least 20) and put all the related 
 student records information in an array: Student ID, Name, Address, and GPA.
