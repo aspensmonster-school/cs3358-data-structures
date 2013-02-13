@@ -1,0 +1,32 @@
+Project 2
+
+(A)Static Stack
+
+Create an array of student records (at least 20) and put all the related 
+student records information in an array: Student ID, Name, Address, and GPA.
+
+-Display the student records in the array.
+
+-Push all student records from the array to a static stack.
+
+-Pop 5 student records from the stack and display the popped list.
+
+-Display the remaining student records in the stack.
+
+(B) Dynamic Stack
+
+Create a linked list of student records (at least 20) and put all the 
+related student records information in the linked list: Student ID, Name, 
+Address, and a pointer for test scores (at least 10).
+
+-Display the student records in the linked list and the average of scores 
+(do not display pointers)
+
+-Push all student records from the linked list to a dynamic stack.
+
+-Pop 5 student records from the dynamic stack and display the popped list.
+
+-Display the remaining student records in the dynamic stack.
+
+2a use array
+2b use linked list
