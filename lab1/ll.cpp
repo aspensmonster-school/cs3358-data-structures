@@ -19,7 +19,6 @@ ll::ll()
 
 ll::~ll()
 {
-  cout << "Called ll destructor" << endl;
   deleteListContents();
   delete head;
 //  delete tail;
@@ -107,7 +106,6 @@ void ll::insert(Student* stu,int slot)
   /* Test if empty list */
   if (head == NULL)
   {
-    cout << "List was empty. Creating head." << endl;
     node *temp = new node;
     temp->student = stu;
     temp->next = NULL;
@@ -119,7 +117,6 @@ void ll::insert(Student* stu,int slot)
 
   if (slot == 1)
   {
-    cout << "Slot " << slot << " is the head of the list." << endl;
     insertHead(stu);
     return;
   }
@@ -140,7 +137,6 @@ void ll::insert(Student* stu,int slot)
   /* Test if the slot the user asked for exists */
   if( i < slot)
   {
-    cout << "Don't have that many slots, adding to tail." << endl;
     insertTail(stu);
     return;
   }
@@ -160,11 +156,9 @@ void ll::insert(Student* stu,int slot)
 void ll::deleteListContents()
 {
   
-  cout << "Deleting list..." << endl;
  
   if(head == NULL)
   {
-    cout << "Empty list. Nothing to delete." << endl;
     return;
     /* What if head get's set to NULL inappropriately? Then
      * memory still isn't free'd and we can't get to it!
@@ -183,12 +177,10 @@ void ll::deleteListContents()
     
   }
 
-  cout << "Attempting to delete head... " << endl;
 
   delete head;
   head = NULL;
  
-  cout << "Head deleted." << endl;
  
   /* Don't need to delete tail. We deleted its contents in the while loop
    * above
@@ -210,13 +202,11 @@ void ll::sortById()
 
   if(head == NULL)
   {
-    cout << "Empty list. Nothing to sort." << endl;
     return;
   }
   else
   if(head->next == NULL)
   {
-    cout << "Single item. Sorted by default." << endl;
     return;
   }
 
@@ -236,7 +226,6 @@ void ll::sortById()
     string temp1 = i->student->getId();
     int temp1i = atoi(temp1.c_str());
 
-    cout << "We're entering the loop." << endl;
 
     while(p != NULL)
     {
@@ -247,14 +236,12 @@ void ll::sortById()
 
       if(temp2i < temp1i && temp2i < temp3i)
       {
-        cout << temp2i << " is lower than " << temp1i << " and " << temp3i << endl;
         l = p;
       }
 
       p = p->next;
     }
 
-    cout << "We've escaped the loop." << endl;
 
     if(flag == 0)
     {
@@ -269,7 +256,6 @@ void ll::sortById()
     /* i IS l ; this iteration is already sorted. Carry on.*/
     if(l == i)
     {
-      cout << "i is lowest" << endl;
       i = i->next;
       l = i;
       p = i->next;
@@ -279,7 +265,6 @@ void ll::sortById()
     /* l and i right next to each other */
     if(l->prev == i)
     {
-      cout << "i and l are next to each other." << endl;
       l->next->prev = i;
       i->prev->next = l;
       i->next = l->next;
@@ -327,7 +312,6 @@ void ll::sortById()
     l = i;
     p = i->next;
 
-    cout << "Lol looping." << endl;
 
   }
 
@@ -339,8 +323,6 @@ void ll::displayContents()
   node *temp;
   temp = head;
   
-  cout << "Displaying..." << endl;  
-  cout << "temp should be null after deletion... " << temp << endl;
  
   while(temp != NULL)
   {
@@ -348,7 +330,6 @@ void ll::displayContents()
     temp = temp->next;
   }
 
-  cout << "We've finished displayContents() " << endl;
 
 }
 
