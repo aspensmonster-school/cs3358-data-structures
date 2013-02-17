@@ -20,6 +20,8 @@ int main(int argc, char *argv[])
   ifs.open("input.txt");
   addFileToList(ifs, st);
 
+  cout << "test." << endl;
+
   return 0;
 
 }
