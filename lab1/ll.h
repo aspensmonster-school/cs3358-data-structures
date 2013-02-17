@@ -39,6 +39,7 @@ class ll
     void deleteListContents();
     
     void sortByName();
+    void sortById();
     void displayContents();
 
 };

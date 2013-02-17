@@ -68,6 +68,20 @@ int main(int argc, char *argv[])
 
   cout << "Completed insertion paces." << endl;
 
+  list->deleteListContents();
+
+  cout << "New list made. Attempting to sort." << endl;
+
+  addFileToList(ifs, list); 
+
+  cout << "Beginning list sort." << endl;
+
+  list->sortById();
+
+  cout << "List (supposedly) sorted." << endl;
+
+  list->displayContents();
+
   delete list;
 
 /*
