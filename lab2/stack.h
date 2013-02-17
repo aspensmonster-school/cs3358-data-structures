@@ -9,15 +9,15 @@ class stack
 
   private:
 
-    Student stack[100]; /* 100 stack frames oughta be enough for anybody... */
+    Student* stack[100]; /* 100 stack frames oughta be enough for anybody... */
 
   public:
 
     stack();
     virtual ~stack();
 
-    void push();
-    void pop();
+    void push(Student*);
+    void pop(Student*);
 
 }
 
