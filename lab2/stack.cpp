@@ -27,10 +27,35 @@ stack::~stack()
 
 void stack::push(Student* stu)
 {
+  int i = 0;
+
+  while( st[i] != NULL && i < 100)
+  {
+    i++;
+  }
+
+  if(i == 100)
+  {
+    cout << "There you go, trying to smash the stack..." << endl;
+    return;
+  }
+
+  st[i] = stu;
 
 }
 
 void stack::pop(Student* stu)
 {
+  int i = 0;
+
+  while(st[i] != NULL)
+  {
+    i++;
+  }
+
+  Student* temp;
+  temp = st[--i];
+  st[i] = NULL;
+  return temp;
 
 }
