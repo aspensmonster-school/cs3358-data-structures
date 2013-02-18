@@ -277,11 +277,25 @@ void ll::sortById()
     }
 
     /* l and i right next to each other */
-    if(l->prev == i)
+    if(l->prev == i && ( l->student->getId() < l->prev->student->getId() ))
     {
       cout << "i and l are next to each other." << endl;
-      l->next->prev = i;
-      i->prev->next = l;
+      cout << "Apparently " << l->student->getId() << " is less than " << l->prev->student->getId() << "." << endl;
+      
+      if(l->next != NULL)
+      {
+        l->next->prev = i;
+      }
+
+      if(i->prev != NULL)
+      {
+        i->prev->next = l;
+      }
+
+      /* Forgot about adding iteration code */
+      node* nextIndex;
+      nextIndex = i->next;
+
       i->next = l->next;
       l->next = i;
 
@@ -290,6 +304,13 @@ void ll::sortById()
 
       i->prev = l;
       l->prev = iprev;
+
+      /* Forgot to include iteration in this case */
+
+      i = nextIndex;
+      l = i;
+      p = i->next;
+
       continue;
     }
 
