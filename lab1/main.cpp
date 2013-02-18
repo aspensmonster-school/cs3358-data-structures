@@ -28,20 +28,8 @@ int main(int argc, char *argv[])
   cout << "\n\nDELETING LIST ELEMENTS\n\n";
 
   list->deleteListContents();
-  list->deleteListContents();
-
-  for(int i = 0; i < 2 ; i++)
-  {
-    addFileToList(ifs, list);
-  }
-
-  list->displayContents();
   
-  list->deleteListContents();
-  list->deleteListContents();
-  list->deleteListContents();
-
-  cout << "Putting insert() through its paces." << endl;
+  cout << "\n\nPutting insert() through its paces.\n\n" << endl;
 
   Student* empty = new Student();
   list->insert(empty,10);
@@ -66,45 +54,26 @@ int main(int argc, char *argv[])
   Student* farout = new Student();
   list->insert(farout,100);
 
-  cout << "Completed insertion paces." << endl;
+  cout << "\n\nCompleted insertion paces.\n\n" << endl;
 
   list->deleteListContents();
 
-  cout << "New list made. Attempting to sort." << endl;
+  addFileToList(ifs,list);
 
-  addFileToList(ifs, list); 
+  cout << "\n\nMaking new list that will then be sorted.\n\n" << endl;
 
-  cout << "Beginning list sort." << endl;
+  list->displayContents();
+
+  cout << "\n\nBeginning list sort.\n\n" << endl;
 
   list->sortById();
 
-  cout << "List (supposedly) sorted." << endl;
+  cout << "\n\nList sorted.\n\n" << endl;
 
   list->displayContents();
 
   delete list;
 
-/*
-
-  list->deleteListContents();
-
-  cout << "\n\nLIST ELEMENTS DELETED\n\n";
-  cout << "\n\nDISPLAYING CONTENTS\n\n";
-
-  list->displayContents();
-*/
-//  list->displayContents();
-
-//  cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
-
-//  list->sortByName();
-/*
-  cout << "We will now delete the list. " << endl;
-
-  delete list;
-
-  cout << "List deleted." << endl;
-*/
   return 0;
 
 }
