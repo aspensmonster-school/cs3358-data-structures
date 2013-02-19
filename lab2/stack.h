@@ -17,7 +17,7 @@ class stack
     virtual ~stack();
 
     void push(Student*);
-    void pop(Student*);
+    Student* pop();
 
 }
 

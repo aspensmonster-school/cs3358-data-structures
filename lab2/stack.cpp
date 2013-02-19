@@ -44,7 +44,7 @@ void stack::push(Student* stu)
 
 }
 
-void stack::pop(Student* stu)
+Student* stack::pop()
 {
   int i = 0;
 
