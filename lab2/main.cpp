@@ -20,8 +20,32 @@ int main(int argc, char *argv[])
   ifs.open("input.txt");
   addFileToStack(ifs, st);
 
-  Student* temp;
-  temp = st->pop();
+  cout << "\n\nPopping 5 students from the stack\n\n";
+
+  for(int i = 0; i < 5 ; i++)
+  {
+    Student* temp;
+    temp = st->pop();
+    temp->display();
+    delete temp;
+  }
+
+  cout << "\n\nPopping the remaining students from the stack\n\n";
+
+  for(int i = 0 ; i < 20 ; i++)
+  {
+    if(st->isEmpty())
+    {
+      continue;
+    }
+    Student *temp;
+    temp = st->pop();
+    temp->display();
+    delete temp;
+  }
+ 
+  delete st;
+ 
   return 0;
 
 }

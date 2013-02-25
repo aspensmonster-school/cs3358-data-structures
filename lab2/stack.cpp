@@ -11,7 +11,6 @@ using namespace std;
 stack::stack()
 {
   /* initialize our stack */
-  cout << "initializing stack object" << endl;
   for(int i = 0 ; i < 100 ; i++)
   {
     stackarray[i] = NULL;
@@ -26,20 +25,17 @@ stack::~stack()
     delete stackarray[i];
   }
 
-  delete stackarray;
+//  delete stackarray;
 
 }
 
 void stack::push(Student* stu)
 {
 
-  cout << "Inside push method" << endl;
- 
   int i = 0;
 
   while( stackarray[i] != NULL && i < 100)
   {
-    cout << i << endl;
     i++;
   }
 
@@ -50,7 +46,6 @@ void stack::push(Student* stu)
   }
 
   stackarray[i] = stu;
-  cout << "student object pushed onto stack" << endl;
 }
 
 Student* stack::pop()
@@ -67,8 +62,18 @@ Student* stack::pop()
   temp = stackarray[i];
   stackarray[i] = NULL;
 
-  cout << "Popping student from stack." << endl;
-
   return temp;
 
+}
+
+bool stack::isEmpty()
+{
+  if(stackarray[0] == NULL)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }

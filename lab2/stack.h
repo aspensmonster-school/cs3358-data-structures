@@ -18,6 +18,7 @@ class stack
 
     void push(Student*);
     Student* pop();
+    bool isEmpty();
 
 };
 
