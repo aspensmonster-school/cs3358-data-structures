@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void addFileToList(ifstream&,stack*);
+void addFileToStack(ifstream&,stack*);
 
 int main(int argc, char *argv[])
 {
@@ -18,15 +18,15 @@ int main(int argc, char *argv[])
   stack* st = new stack;
   ifstream ifs;
   ifs.open("input.txt");
-  addFileToList(ifs, st);
+  addFileToStack(ifs, st);
 
-  cout << "test." << endl;
-
+  Student* temp;
+  temp = st->pop();
   return 0;
 
 }
 
-void addFileToList(ifstream& input,stack* st)
+void addFileToStack(ifstream& input,stack* sp)
 {
 
   while( input.good() && input.peek() != EOF )
@@ -43,7 +43,7 @@ void addFileToList(ifstream& input,stack* st)
 
     Student *temp = new Student(id,name,address,gpa);
 //    list->insertTail(temp);
-    st->push(temp);
+    sp->push(temp);
 
   }
 
