@@ -1,0 +1,22 @@
+Project 4
+
+(DUE March 6 2013)
+
+Binary Search and Recursion
+
+- Create a file of at least 20 student records sorted by student id.
+
+- Read student records into a vector in C++ or Java program.
+
+- Student records should include Student ID, Name, GPA, Student Address, and a 
+  pointer which point to (10+) test scores somewhere in the program.
+
+- Display the 20+ student records (not just ID) and related test scores.
+
+- Use recursive binary search to search a student-ID in the vector.
+
+- Use recursive binary search to search a student-ID at the end of the vector.
+
+- Use recursive binary search to search a student-ID which is not in the vector.
+
+For each search, print the ID to be searched and the searched result with the found record. 
