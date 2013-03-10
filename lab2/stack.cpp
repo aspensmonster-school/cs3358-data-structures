@@ -1,4 +1,6 @@
 #include "stack.h"
+#include <cstdlib>
+#include <iostream>
 
 #ifndef NULL
 #define NULL 0
@@ -9,53 +11,63 @@ using namespace std;
 stack::stack()
 {
   /* initialize our stack */
-
-  for(int i = 0 ; i < 100 ; i++)
+  for(int i = 0 ; i < STACK_SIZE ; i++)
   {
-    st[i] = NULL;
+    stackarray[i] = NULL;
   }
 
+  index = -1;
 }
 
 stack::~stack()
 {
-  for(int i = 0 ; i < 100 ; i++)
+  for(int i = 0 ; i < STACK_SIZE ; i++)
   {
-    delete st[i];
+    delete stackarray[i];
   }
+
+//  delete stackarray;
+
 }
 
 void stack::push(Student* stu)
 {
-  int i = 0;
-
-  while( st[i] != NULL && i < 100)
-  {
-    i++;
-  }
-
-  if(i == 100)
+  if(index == STACK_SIZE - 1)
   {
     cout << "There you go, trying to smash the stack..." << endl;
     return;
   }
-
-  st[i] = stu;
-
+  else
+  {
+    stackarray[++index] = stu;
+  }
 }
 
-void stack::pop(Student* stu)
+Student* stack::pop()
 {
-  int i = 0;
-
-  while(st[i] != NULL)
+  if(index < 0)
   {
-    i++;
+    cout << "Stack is empty. " << endl;
+    exit(-1);
   }
+  else
+  {
+    Student* temp;
+    temp = stackarray[index]; 
+    stackarray[index] = NULL;
+    index--;
+    return temp;
+  }
+}
 
-  Student* temp;
-  temp = st[--i];
-  st[i] = NULL;
-  return temp;
-
+bool stack::isEmpty()
+{
+  if(index < 0)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }

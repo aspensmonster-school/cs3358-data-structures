@@ -1,7 +1,3 @@
-/* Need to get input from user that has the data for all of the students. Ought
-   to use input file. Easier to parse and grab from command line.
-*/
-
 #include "stack.h"
 #include <fstream>
 #include <string>
@@ -10,7 +6,7 @@
 
 using namespace std;
 
-void addFileToList(ifstream&,stack*);
+void addFileToStack(ifstream&,stack*);
 
 int main(int argc, char *argv[])
 {
@@ -18,13 +14,42 @@ int main(int argc, char *argv[])
   stack* st = new stack;
   ifstream ifs;
   ifs.open("input.txt");
-  addFileToList(ifs, st);
 
+  cout << "\n\nPushing input file onto stack.\n\n";
+
+  addFileToStack(ifs, st);
+
+  cout << "\n\nPopping 5 students from the stack\n\n";
+
+  for(int i = 0; i < 5 ; i++)
+  {
+    Student* temp;
+    temp = st->pop();
+    temp->display();
+    delete temp;
+  }
+
+  cout << "\n\nPopping the remaining students from the stack\n\n";
+
+  for(int i = 0 ; i < 20 ; i++)
+  {
+    if(st->isEmpty())
+    {
+      continue;
+    }
+    Student *temp;
+    temp = st->pop();
+    temp->display();
+    delete temp;
+  }
+ 
+  delete st;
+ 
   return 0;
 
 }
 
-void addFileToList(ifstream& input,stack* st)
+void addFileToStack(ifstream& input,stack* sp)
 {
 
   while( input.good() && input.peek() != EOF )
@@ -40,8 +65,7 @@ void addFileToList(ifstream& input,stack* st)
     gpa = atof(gpastring.c_str());
 
     Student *temp = new Student(id,name,address,gpa);
-//    list->insertTail(temp);
-    st->push(temp);
+    sp->push(temp);
 
   }
 

@@ -1,7 +1,7 @@
 #ifndef stack_h_
 #define stack_h_
 
-#include "Student.h"
+#include "student.h"
 
 class stack
 
@@ -9,7 +9,9 @@ class stack
 
   private:
 
-    Student* stack[100]; /* 100 stack frames oughta be enough for anybody... */
+    static const int STACK_SIZE = 100;
+    Student* stackarray[STACK_SIZE]; /* 100 stack frames oughta be enough for anybody... */
+    int index;
 
   public:
 
@@ -17,8 +19,9 @@ class stack
     virtual ~stack();
 
     void push(Student*);
-    void pop(Student*);
+    Student* pop();
+    bool isEmpty();
 
-}
+};
 
 #endif
