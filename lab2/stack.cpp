@@ -53,7 +53,7 @@ Student* stack::pop()
   else
   {
     Student* temp;
-    temp = stackarray[index];
+    temp = stackarray[index]; 
     stackarray[index] = NULL;
     index--;
     return temp;

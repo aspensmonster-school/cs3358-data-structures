@@ -14,6 +14,9 @@ int main(int argc, char *argv[])
   stack* st = new stack;
   ifstream ifs;
   ifs.open("input.txt");
+
+  cout << "\n\nPushing input file onto stack.\n\n";
+
   addFileToStack(ifs, st);
 
   cout << "\n\nPopping 5 students from the stack\n\n";
