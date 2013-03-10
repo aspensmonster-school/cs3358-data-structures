@@ -1,7 +1,3 @@
-/* Need to get input from user that has the data for all of the students. Ought
-   to use input file. Easier to parse and grab from command line.
-*/
-
 #include "stack.h"
 #include <fstream>
 #include <string>
@@ -66,7 +62,6 @@ void addFileToStack(ifstream& input,stack* sp)
     gpa = atof(gpastring.c_str());
 
     Student *temp = new Student(id,name,address,gpa);
-//    list->insertTail(temp);
     sp->push(temp);
 
   }
