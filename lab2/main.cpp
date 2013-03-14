@@ -3,10 +3,12 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
+#include "ll.h"
 
 using namespace std;
 
 void addFileToStack(ifstream&,stack*);
+void addFileToList(ifstream&,ll*);
 
 int main(int argc, char *argv[])
 {
