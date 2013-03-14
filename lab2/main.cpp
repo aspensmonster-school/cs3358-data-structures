@@ -14,39 +14,25 @@ int main(int argc, char *argv[])
 {
 
   stack* st = new stack;
+  ll* list = new ll;
   ifstream ifs;
   ifs.open("input.txt");
 
-  cout << "\n\nPushing input file onto stack.\n\n";
+  cout << "\n\nAdding student objects to our linked list.\n\n";
 
-  addFileToStack(ifs, st);
+  addFileToList(ifs, list);
 
-  cout << "\n\nPopping 5 students from the stack\n\n";
+  cout << "\n\nProceeding to push 5 students from list onto stack.\n\n";
 
   for(int i = 0; i < 5 ; i++)
   {
     Student* temp;
-    temp = st->pop();
-    temp->display();
-    delete temp;
+    temp = list->getStudent(i);
+    st->push(temp);
   }
 
-  cout << "\n\nPopping the remaining students from the stack\n\n";
-
-  for(int i = 0 ; i < 20 ; i++)
-  {
-    if(st->isEmpty())
-    {
-      continue;
-    }
-    Student *temp;
-    temp = st->pop();
-    temp->display();
-    delete temp;
-  }
- 
   delete st;
- 
+  delete list; 
   return 0;
 
 }
@@ -68,6 +54,31 @@ void addFileToStack(ifstream& input,stack* sp)
 
     Student *temp = new Student(id,name,address,gpa);
     sp->push(temp);
+
+  }
+
+  /* Put ifs seeker back to beginning of file stream */
+  input.seekg(0, ios::beg);
+
+}
+
+void addFileToList(ifstream& input,ll* list)
+{
+
+  while( input.good() && input.peek() != EOF )
+  {
+
+    string id,name,address,gpastring;
+    getline(input,id,';');
+    getline(input,name,';');
+    getline(input,address,';');
+    getline(input,gpastring,'\n');
+
+    double gpa;
+    gpa = atof(gpastring.c_str());
+
+    Student *temp = new Student(id,name,address,gpa);
+    list->insertTail(temp);
 
   }
 
