@@ -1,6 +1,6 @@
 Project 4
 
-(DUE March 6 2013)
+(DUE March 6 2013) / Well, THAT slipped by.
 
 Binary Search and Recursion
 
