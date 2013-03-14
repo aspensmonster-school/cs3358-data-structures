@@ -7,7 +7,8 @@ of type integer with value specified by `STACK_SIZE` in `stack.h`.
 
 The second, part B, was to both create a linked list of student objects, and 
 to then push them onto a dynamic stack. In this implementation, the stack IS a 
-linked list.
+linked list. One list will hold pointers to the Student objects. The other 
+will serve as the stack and push/pop student pointers.
 
 #Compilation and Memory Checking
 
