@@ -11,3 +11,5 @@ the get method needs to set its own student pointer to null and update the
 list to work around the "removed" node (but not deleted, since the object is 
 just in use by a different structure.) But this prevents objects from being 
 easily passed back and forth. Hmmm...
+
+So that's what copy constructors are good for.
