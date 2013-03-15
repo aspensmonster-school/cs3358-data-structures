@@ -1,5 +1,5 @@
 /* Doubly Linked List */
-
+/* Mar 15 2013: Updating this to include copy consructor and assignment op */
 #include "ll.h"
 #include <iostream>
 #include <string>
