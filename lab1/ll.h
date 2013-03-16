@@ -42,6 +42,8 @@ class ll
     void sortById();
     void displayContents();
 
+    Student* getStudent(int);
+
 };
 
 #endif

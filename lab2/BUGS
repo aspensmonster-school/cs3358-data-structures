@@ -1,0 +1,15 @@
+The current memory model has us swapping pointers around. However, how does 
+one object know if another has already wiped a memory address? Say you put 
+Student objects into a linked list, and then push some of them onto a stack.
+At this point, the pointer to the student object exists in both the list AND 
+the stack. But both data structures have destructors that attempt to delete 
+the pointer! Only one can do this succesfully. The other will barf when it 
+tries to free memory that has already been freed! I'm suspecting that I might 
+need to set up a model wherein the memory is only put in one structure at a 
+time. That is, if we push a Student pointer onto a stack from the linked list, 
+the get method needs to set its own student pointer to null and update the 
+list to work around the "removed" node (but not deleted, since the object is 
+just in use by a different structure.) But this prevents objects from being 
+easily passed back and forth. Hmmm...
+
+So that's what copy constructors are good for.

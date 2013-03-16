@@ -373,3 +373,29 @@ void ll::displayContents()
 
 }
 
+Student* ll::getStudent(int index)
+{
+  node *temp;
+  temp = head;
+
+  if(temp == NULL)
+  {
+    cout << "List is empty. Can't return anything." << endl;
+    exit(-1);
+  }
+
+  for(int i = 0 ; i < index ; i++)
+  {
+    if(temp->next == NULL)
+      {
+        break;
+      }
+    temp = temp->next;
+  }
+
+  Student* stu = temp->student;
+  stu->display();
+  return stu;
+
+}
+
