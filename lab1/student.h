@@ -21,6 +21,8 @@ class Student
     Student();
     Student(std::string,std::string,std::string,double);
     virtual ~Student();
+    Student(const Student&);
+    Student& operator=(const Student&);
     
     void display();
 
