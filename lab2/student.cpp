@@ -22,6 +22,32 @@ Student::Student(string id, string name, string address, double gpa)
   this->gpa = gpa;
 }
 
+Student::Student(const Student& copy)
+{
+  //
+  id = copy.id;
+  name = copy.name;
+  address = copy.address;
+  gpa = copy.gpa;
+}
+
+Student& Student::operator=(const Student& copy)
+{
+  //Self-assign check
+  if(this == &copy)
+  {
+    return *this;
+  }
+ 
+  id = copy.id;
+  name = copy.name;
+  address = copy.address;
+  gpa = copy.gpa;
+
+  return *this;
+  
+}
+
 Student::~Student()
 {
 //  cout << "Student destructor called." << endl;
