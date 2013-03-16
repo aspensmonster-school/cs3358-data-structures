@@ -15,5 +15,5 @@ will serve as the stack and push/pop student pointers.
 The code on branch master is lab2b. One may check out either branch lab2a or 
 lab2b to test each assignment.
 
-    $ g++ *.cpp -g -o lab2
+    $ g++ ../student.* ../lab1/ll.* stack.* main.cpp -g -o lab2
     $ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./lab2
