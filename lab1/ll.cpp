@@ -393,9 +393,13 @@ Student* ll::getStudent(int index)
     temp = temp->next;
   }
 
-  Student* stu = temp->student;
-  stu->display();
-  return stu;
+//  Student* temp1 = temp->student;
+  Student temp2;
+//  temp2 = *temp1;
+  temp2 = *(temp->student);
+  Student* temp3 = new Student(temp2);
+//  stu->display();
+  return temp3;
 
 }
 
