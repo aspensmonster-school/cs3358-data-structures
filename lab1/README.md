@@ -13,7 +13,7 @@ sufficient to use structs that hold the Object being manipulated.
 
 #Compilation and Memory Checking
 
-    $ g++ *.cpp -g -o lab1
+    $ g++ ../student.* ll.* main.cpp -g -o lab1
     $ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./lab1
 
 #Implementation
