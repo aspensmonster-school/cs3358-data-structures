@@ -1,7 +1,7 @@
 #ifndef stack_h_
 #define stack_h_
 
-#include "student.h"
+#include "../lab1/student.h"
 
 class stack
 

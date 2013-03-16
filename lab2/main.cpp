@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include "ll.h"
+#include "../lab1/ll.h"
 
 using namespace std;
 
