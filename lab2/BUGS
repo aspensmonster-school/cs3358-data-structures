@@ -13,3 +13,5 @@ just in use by a different structure.) But this prevents objects from being
 easily passed back and forth. Hmmm...
 
 So that's what copy constructors are good for.
+
+Well... it's still segfaulting. This is going to take longer than I thought.
