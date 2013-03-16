@@ -1,7 +1,7 @@
 #ifndef ll_h_
 #define ll_h_
 
-#include "student.h"
+#include "../student.h"
 #include <iostream>
 
 using namespace std;
