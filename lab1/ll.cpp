@@ -401,5 +401,11 @@ Student* ll::getStudent(int index)
 //  stu->display();
   return temp3;
 
+  /* Should this be returing a copy to the caller only, or should it
+     also remove its copy of the Student object from the list? */
+
+  /* I could code for both cases with a bool flag parameter that indicates
+     whether or not this is a "transfer." */
+
 }
 
