@@ -1,1 +1,3 @@
 apparently 3b will be to implement a RPN parser.
+
+Nope. 3A was just to implement a queue (dynamic, iirc). 3B was Extra Credit.
