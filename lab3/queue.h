@@ -15,34 +15,18 @@ class queue
     struct node {
       Student *student;
       node *next;
-      node *prev;
       ~node(){delete student;} 
     };
     node *head;
-//    node *tail;
 
   public:
 
     queue();
     virtual ~queue();
 
-    void insertTail(Student*);
-    void insertHead(Student*);
-    void insert(Student*,int);
-    void insert(Student*);
-
-    void removeTail();
-    void removeHead();
-    void remove(int);
-    void remove();
-
+    void push(Student*);
+    Student* pop(int);
     void deleteListContents();
-    
-    void sortByName();
-    void sortById();
-    void displayContents();
-
-    Student* getStudent(int);
 
 };
 
