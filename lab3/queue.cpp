@@ -35,9 +35,7 @@ void queue::insertTail(Student* stu)
     node *temp = new node;
     temp->student = stu;
     temp->next = NULL;
-    temp->prev = NULL;
     head = temp;
-    //tail = temp;
     return;
   }
 
@@ -48,9 +46,7 @@ void queue::insertTail(Student* stu)
     node *temp = new node;
     temp->student = stu;
     temp->next = NULL;
-    temp->prev = head;
     head->next = temp;
-    //tail = temp;
     return; 
   }  
 
@@ -64,14 +60,14 @@ void queue::insertTail(Student* stu)
 
   node *temp2 = new node;
   temp2->student = stu;
-  temp2->prev = temp;
   temp2->next = NULL;
   temp->next = temp2;
-  //tail = temp2;
 
   return;
 
 }
+
+/* Since head is front of list, we just return head and update accordingly */
 
 Student* queue::pop(int index)
 {
