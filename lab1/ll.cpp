@@ -393,9 +393,19 @@ Student* ll::getStudent(int index)
     temp = temp->next;
   }
 
-  Student* stu = temp->student;
-  stu->display();
-  return stu;
+//  Student* temp1 = temp->student;
+  Student temp2;
+//  temp2 = *temp1;
+  temp2 = *(temp->student);
+  Student* temp3 = new Student(temp2);
+//  stu->display();
+  return temp3;
+
+  /* Should this be returing a copy to the caller only, or should it
+     also remove its copy of the Student object from the list? */
+
+  /* I could code for both cases with a bool flag parameter that indicates
+     whether or not this is a "transfer." */
 
 }
 

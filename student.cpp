@@ -36,6 +36,7 @@ Student& Student::operator=(const Student& copy)
   //Self-assign check
   if(this == &copy)
   {
+    cout << "Self-assign" << endl;
     return *this;
   }
  
@@ -43,7 +44,8 @@ Student& Student::operator=(const Student& copy)
   name = copy.name;
   address = copy.address;
   gpa = copy.gpa;
-
+  
+  cout << "Assigned" << endl;
   return *this;
   
 }
