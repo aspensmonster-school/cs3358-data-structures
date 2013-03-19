@@ -20,6 +20,9 @@ detailed in ~/lab1/ll.cpp in the getStudent function.
 
 #Compilation and Memory Checking
 
+ALERT: Broken at the moment. Forgot to add stack\_ll files to repo from my
+local machine. Can't fix until later tonight.
+
 The code on branch master is lab2b. One may check out either branch lab2a or 
 lab2b to test each assignment.
 
