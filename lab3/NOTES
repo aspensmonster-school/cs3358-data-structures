@@ -1,3 +1,8 @@
 Deleted lab3 branch again. Only had ramblings and didnt have the stack_ll 
 changes in the FF when I did git pull origin lab3 , since I added those 
 AFTER the latest commit I had for lab3 locally. Nothing of value was lost.
+
+I'm starting to notice how sometimes, I'll end up "merging" changes from one 
+computer I was working on into another. This makes the gitk look messy, 
+because it appears there are multiple contributors to the repo. In a sense, I 
+suppose that's correct. But it still looks ugly.
