@@ -20,13 +20,13 @@ queue::queue()
 queue::~queue()
 {
   cout << "Called queue destructor" << endl;
-  deleteListContents();
+  deleteQueueContents();
   delete head;
 //  delete tail;
 
 }
 
-void queue::insertTail(Student* stu)
+void queue::push(Student* stu)
 {
 
   /* Test if empty list */
@@ -69,41 +69,37 @@ void queue::insertTail(Student* stu)
 
 /* Since head is front of list, we just return head and update accordingly */
 
-Student* queue::pop(int index)
+Student* queue::pop()
 {
   node *temp;
   temp = head;
 
   if(temp == NULL)
   {
-    cout << "List is empty. Can't return anything." << endl;
+    cout << "Queue is empty. Can't return anything." << endl;
     exit(-1);
   }
 
-  for(int i = 0 ; i < index ; i++)
-  {
-    if(temp->next == NULL)
-      {
-        break;
-      }
-    temp = temp->next;
-  }
+  head = head->next;
 
-  Student* stu = temp->student;
-  stu->display();
-  return stu;
+  Student stu = *(temp->student);
+  Student* stu2 = new Student(stu);
+  
+  delete temp;
+
+  return stu2;
 
 }
 
 
-void queue::deleteListContents()
+void queue::deleteQueueContents()
 {
   
-  cout << "Deleting list..." << endl;
+  cout << "Deleting queue..." << endl;
  
   if(head == NULL)
   {
-    cout << "Empty list. Nothing to delete." << endl;
+    cout << "Empty queue. Nothing to delete." << endl;
     return;
     /* What if head get's set to NULL inappropriately? Then
      * memory still isn't free'd and we can't get to it!
