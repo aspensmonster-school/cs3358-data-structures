@@ -25,8 +25,8 @@ class queue
     virtual ~queue();
 
     void push(Student*);
-    Student* pop(int);
-    void deleteListContents();
+    Student* pop();
+    void deleteQueueContents();
 
 };
 

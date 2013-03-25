@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "queue.h"
 #include <fstream>
 #include <string>
 #include <iostream>
@@ -7,13 +7,13 @@
 
 using namespace std;
 
-void addFileToStack(ifstream&,stack*);
+void addFileToQueue(ifstream&,queue*);
 void addFileToList(ifstream&,ll*);
 
 int main(int argc, char *argv[])
 {
 
-  stack* st = new stack;
+  queue* q = new queue;
   ll* list = new ll;
   ifstream ifs;
   ifs.open("input.txt");
@@ -22,22 +22,32 @@ int main(int argc, char *argv[])
 
   addFileToList(ifs, list);
 
-  cout << "\n\nProceeding to push 5 students from list onto stack.\n\n";
+  cout << "\n\nProceeding to push 5 students from list onto queue.\n\n";
 
   for(int i = 0; i < 5 ; i++)
   {
     Student* temp;
     temp = list->getStudent(i);
-    st->push(temp);
+    q->push(temp);
   }
 
-  delete st;
+  cout << "\n\nNow we are popping those five students.\n\n";
+
+  for(int i = 0; i < 5 ; i++)
+  {
+    Student* temp;
+    temp = q->pop();
+    temp->display();
+    delete temp;
+  }
+
+  delete q;
   delete list; 
   return 0;
 
 }
 
-void addFileToStack(ifstream& input,stack* sp)
+void addFileToQueue(ifstream& input,queue* qlocal)
 {
 
   while( input.good() && input.peek() != EOF )
@@ -53,7 +63,7 @@ void addFileToStack(ifstream& input,stack* sp)
     gpa = atof(gpastring.c_str());
 
     Student *temp = new Student(id,name,address,gpa);
-    sp->push(temp);
+    qlocal->push(temp);
 
   }
 
