@@ -42,6 +42,29 @@ void addFileToVector(ifstream& input,vector<Student*>& vec)
     Student *temp = new Student(id,name,address,gpa);
     vec.push_back(temp);
 
+    /* Now add grades to the student */
+
+    bool flag = true;
+
+    while(flag)
+    {
+      string stringgrade;
+      double tempgrade;
+      
+      getline(input,stringgrade,';'); 
+      tempgrade = atof(stringgrade.c_str()); 
+
+      /* See if we've reached the last grade yet */
+      if(input.peek() == '\n')
+      {
+        flag = false;
+        input.get();
+        /* Need to get \n char so next outer while iteration works */
+      }
+
+      temp->addGrade(tempgrade); 
+    }
+
   }
 
   /* Put ifs seeker back to beginning of file stream */

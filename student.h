@@ -4,6 +4,7 @@
 /* This will be the student object */
 
 #include <string>
+#include <vector>
 
 class Student
 
@@ -15,6 +16,7 @@ class Student
     std::string name;
     std::string address;
     double gpa;
+    std::vector<double> grades;
 
   public:
 
@@ -39,11 +41,13 @@ class Student
     void setName(std::string);
     void setAddress(std::string);
     void setGpa(double);
+    void addGrade(double);
 
     std::string getId();
     std::string getName();
     std::string getAddress();
     double getGpa();
+    const std::vector<double> getGrades();
 
 };
 

@@ -98,6 +98,11 @@ void Student::setGpa(double gpa)
   gpa = gpa;
 }
 
+void Student::addGrade(double grade)
+{
+  grades.push_back(grade);
+}
+
 string Student::getId()
 {
   return id;
@@ -116,4 +121,9 @@ string Student::getAddress()
 double Student::getGpa()
 {
   return gpa;
+}
+
+const vector<double> Student::getGrades()
+{
+  return grades;
 }
