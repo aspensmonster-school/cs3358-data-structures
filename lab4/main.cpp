@@ -1,36 +1,30 @@
-#include "queue.h"
 #include <fstream>
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include "../lab1/ll.h"
 #include <vector>
+#include "../student.h"
 
 using namespace std;
 
-void addFileToVector(ifstream&,vector);
+void addFileToVector(ifstream&,vector<Student*>&);
 
 int main(int argc, char *argv[])
 {
 
   ifstream ifs;
   ifs.open("input.txt");
+  vector<Student*> vect;
 
   cout << "\n\nAdding student objects to our vector.\n\n";
 
   addFileToVector(ifs, vect);
 
-  /* Need to flesh all this out; refresh my memory on vectors. */
-
-  /* We will need to add an array of tests to our student objects. */
-
-  /* We will then implement a binary recursive search function in main.cpp */
-
   return 0;
 
 }
 
-void addFileToVector(ifstream& input,vector vec)
+void addFileToVector(ifstream& input,vector<Student*>& vec)
 {
 
   while( input.good() && input.peek() != EOF )
@@ -46,7 +40,7 @@ void addFileToVector(ifstream& input,vector vec)
     gpa = atof(gpastring.c_str());
 
     Student *temp = new Student(id,name,address,gpa);
-    list->insertTail(temp);
+    vec.push_back(temp);
 
   }
 
