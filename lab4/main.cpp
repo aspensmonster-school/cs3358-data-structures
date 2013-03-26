@@ -22,6 +22,10 @@ int main(int argc, char *argv[])
 
   /* Need to flesh all this out; refresh my memory on vectors. */
 
+  /* We will need to add an array of tests to our student objects. */
+
+  /* We will then implement a binary recursive search function in main.cpp */
+
   return 0;
 
 }
