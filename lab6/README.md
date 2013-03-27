@@ -9,5 +9,5 @@ the program is still following the Towers of Hanoi rules.
 
 # Compilation and running
 
-$ g++ main.cpp -o toh
-$ ./toh
+    $ g++ main.cpp -o toh
+    $ ./toh
