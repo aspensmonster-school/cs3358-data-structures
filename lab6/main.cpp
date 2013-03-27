@@ -121,9 +121,12 @@ void render(int height, deque< deque<int> >& _stax)
     if(count == 3)
     {
       finished = true;
+      cout << endl << "=================" << endl;
     }
-    
-    cout << endl;
+    else
+    {
+      cout << endl;
+    }
 
   }
 
