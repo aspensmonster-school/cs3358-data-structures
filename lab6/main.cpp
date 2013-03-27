@@ -6,7 +6,7 @@
 using namespace std;
 
 void prepare(int, deque< deque<int> >&);
-void render(int, deque< deque<int> >&);
+void render(int, deque< deque<int> >&,bool);
 void towersOfHanoi(int,int,int,int,int, deque< deque<int> >&);
 
 int main(int argc, char *argv[])
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
   usleep(2000000);
 
   /* 3 is height, 3 is number of discs, 0 is tower A, 2 is tower C, and 1 is tower B */
-  render(3,stax);
+  render(3,stax,true);
   towersOfHanoi(3,3,0,2,1,stax);
 
   usleep(2000000);
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
   usleep(2000000);
 
   prepare(4,stax);
-  render(4,stax);
+  render(4,stax,true);
   towersOfHanoi(4,4,0,2,1,stax);
 
   usleep(2000000);
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
   usleep(2000000);
 
   prepare(5,stax);
-  render(5,stax);
+  render(5,stax,true);
   towersOfHanoi(5,5,0,2,1,stax);
 
   return 0;
@@ -66,10 +66,13 @@ void prepare(int height, deque< deque<int> >& _stax)
 }
 
 /* Renders the state of our deque of deque's */
-void render(int height, deque< deque<int> >& _stax)
+void render(int height, deque< deque<int> >& _stax,bool refresh)
 {
   /* OS-dependent. Use "cls" if you're on windows. */
-  system("clear");
+  if ( refresh )
+  {
+    system("clear");
+  }
 
   int layer = 0;
   bool finished = false;
@@ -142,14 +145,14 @@ void towersOfHanoi(int height, int disc, int start, int finish, int scratch, deq
   {
     _stax[finish].push_front(_stax[start].front());
     _stax[start].pop_front();
-    render(height,_stax);
+    render(height,_stax,true);
   }
   else
   {
     towersOfHanoi(height, disc - 1, start, scratch, finish, _stax);
     _stax[finish].push_front(_stax[start].front());
     _stax[start].pop_front();
-    render(height,_stax);
+    render(height,_stax,true);
     towersOfHanoi(height, disc - 1, scratch, finish, start, _stax);     
   } 
 }
