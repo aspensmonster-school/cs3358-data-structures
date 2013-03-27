@@ -65,7 +65,7 @@ void prepare(int height, deque< deque<int> >& _stax)
   
 }
 
-/* Renders the state of our vector of vectors */
+/* Renders the state of our deque of deque's */
 void render(int height, deque< deque<int> >& _stax)
 {
   /* OS-dependent. Use "cls" if you're on windows. */
