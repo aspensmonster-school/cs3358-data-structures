@@ -1,1 +1,1 @@
-I honestly don't even remember what lab5 was.
+Ah. Looks like it was to implement quicksort. Not sure about the details.
