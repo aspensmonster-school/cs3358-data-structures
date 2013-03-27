@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 
   deque< deque<int> > stax;
   prepare(3,stax);
+  system("clear");
 
   cout << "Performing Towers of Hanoi for 3 discs." << endl; 
 
@@ -76,29 +77,29 @@ void render(int height, deque< deque<int> >& _stax)
   /* Display indentifier bar */
   cout << "A:" << "\t" << "B:" << "\t" << "C:" << endl << endl;
 
+  /* We do the following to make sure we have the same overall height 
+     with each rendering */
+
+  int greatest = 0;
+
+  for(int i = 0 ; i < 3 ; i++)
+  {
+    if(_stax[i].size() > greatest)
+    {
+      greatest = _stax[i].size();
+    }
+  }
+
+  while( greatest < height )
+  {
+    cout << endl;
+    greatest++;
+  }
+
+  /*Now that we have gotten the rendering box right, onto rendering*/
+
   while( !finished )
   {
-
-    /* We do the following to make sure we have the same overall height with
-       each rendering */
-
-    int greatest = 0;
-
-    for(int i = 0 ; i < 3 ; i++)
-    {
-      if(_stax[i].size() > greatest)
-      {
-        greatest = _stax[i].size();
-      }      
-    } 
-
-    while( greatest < height )
-    {
-      cout << endl;
-      greatest++;
-    } 
-
-    /*Now that we have gotten the rendering box right, onto rendering*/
 
     int count = 0;
 
