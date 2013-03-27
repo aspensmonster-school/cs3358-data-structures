@@ -109,7 +109,7 @@ void render(int height, deque< deque<int> >& _stax)
 /* Implements the recursive solution */
 void towersOfHanoi(int height, int disc, int start, int finish, int scratch, deque< deque<int> >& _stax)
 {
-  if( disc == 0)
+  if(disc == 1)
   {
     _stax[finish].push_front(_stax[start].front());
     _stax[start].pop_front();
