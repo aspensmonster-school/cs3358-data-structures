@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
   usleep(2000000);
 
   prepare(4,stax);
-  render(5,stax);
+  render(4,stax);
   towersOfHanoi(4,4,0,2,1,stax);
 
   usleep(2000000);
