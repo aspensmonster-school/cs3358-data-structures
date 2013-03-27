@@ -1,12 +1,13 @@
-#include <iostream>
-#include <deque>
-#include <unistd.h>
+#include <iostream> /*cout*/
+#include <deque> /*Double Ended Queue Container*/
+#include <unistd.h> /*sleep()*/
+#include <cstdlib> /*system()*/
 
 using namespace std;
 
 void prepare(int, deque< deque<int> >&);
 void render(int, deque< deque<int> >&);
-void towersOfHanoi(int,int,int,int, deque< deque<int> >&);
+void towersOfHanoi(int,int,int,int,int, deque< deque<int> >&);
 
 int main(int argc, char *argv[])
 {
@@ -16,8 +17,8 @@ int main(int argc, char *argv[])
 
   cout << "Performing Towers of Hanoi for 3 discs." << endl; 
 
-  /* 3 is number of discs, 0 is tower A, 2 is tower C, and 1 is tower B */
-  towersOfHanoi(3,0,2,1,stax);
+  /* 3 is height, 3 is number of discs, 0 is tower A, 2 is tower C, and 1 is tower B */
+  towersOfHanoi(3,3,0,2,1,stax);
 
   return 0;
 
@@ -106,20 +107,20 @@ void render(int height, deque< deque<int> >& _stax)
 }
 
 /* Implements the recursive solution */
-void towersOfHanoi(int disc, int start, int finish, int scratch, deque< deque<int> >& _stax)
+void towersOfHanoi(int height, int disc, int start, int finish, int scratch, deque< deque<int> >& _stax)
 {
   if( disc == 0)
   {
     _stax[finish].push_front(_stax[start].front());
     _stax[start].pop_front();
-    render();
+    render(height,_stax);
   }
   else
   {
-    towersOfHanoi(disc - 1, start, scratch, finish);
+    towersOfHanoi(height, disc - 1, start, scratch, finish, _stax);
     _stax[finish].push_front(_stax[start].front());
     _stax[start].pop_front();
-    render();
-    towersOfHanoi(disc - 1, scratch, finish, start);     
+    render(height,_stax);
+    towersOfHanoi(height, disc - 1, scratch, finish, start, _stax);     
   } 
 }
