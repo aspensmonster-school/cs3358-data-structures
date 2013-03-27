@@ -1,6 +1,6 @@
 #include <iostream> /*cout*/
 #include <deque> /*Double Ended Queue Container*/
-#include <unistd.h> /*sleep()*/
+#include <unistd.h> /*usleep()*/
 #include <cstdlib> /*system()*/
 
 using namespace std;
@@ -17,8 +17,33 @@ int main(int argc, char *argv[])
 
   cout << "Performing Towers of Hanoi for 3 discs." << endl; 
 
+  usleep(2000000);
+
   /* 3 is height, 3 is number of discs, 0 is tower A, 2 is tower C, and 1 is tower B */
+  render(3,stax);
   towersOfHanoi(3,3,0,2,1,stax);
+
+  usleep(2000000);
+  system("clear");
+
+  cout << "Performing Towers of Hanoi for 4 discs." << endl;
+
+  usleep(2000000);
+
+  prepare(4,stax);
+  render(5,stax);
+  towersOfHanoi(4,4,0,2,1,stax);
+
+  usleep(2000000);
+  system("clear");
+
+  cout << "Peforming Towers of Hanoi for 5 discs." << endl;
+
+  usleep(2000000);
+
+  prepare(5,stax);
+  render(5,stax);
+  towersOfHanoi(5,5,0,2,1,stax);
 
   return 0;
 
