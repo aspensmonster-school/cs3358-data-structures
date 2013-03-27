@@ -1,0 +1,15 @@
+Proj 6 The Towers of Hanoi and Recursion
+
+Given n discs: disc1, disc2, ... , discn ; stacked on the leftmost peg in 
+order of size with the largest disc at the bottom, and each disc is always 
+smaller than the disc below it,
+
+Move all n discs from leftmost peg A to rightmost peg C with the following 
+rules: 
+
+1.) Only one disc may be moved at a time.
+2.) A disc cannot be placed on the top of a smaller disc.
+3.) There are only three pegs: A,B,C.
+
+Write the program to display every move and indicate the position of each 
+disc. Do this for n = 3,4,5.
