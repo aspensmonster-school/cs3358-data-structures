@@ -11,4 +11,6 @@ Project 5 is quicksort.
 
 Project 6 is towers of hanoi with recursion.
 
-TEST TWO: Will happen next week (Mon Apr 8 or Wed Apr 10, date not yet given).
+TEST TWO: Will happen next week (Mon Apr 8 or Wed Apr 10, date not yet given). 
+Test two will probably emphasize vectors over other containers. Probably won't 
+include associative containers (like set,map,multiset,multimap).
