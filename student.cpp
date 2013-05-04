@@ -61,6 +61,15 @@ void Student::display()
   cout << "Name: " << name << endl;
   cout << "Address: " << address << endl;
   cout << "GPA: " << gpa << endl;
+ 
+  /* Display student grades */ 
+  for(int i = 0 ; i < grades.size() ; i++)
+  {
+    cout << grades[i] << ", ";
+  }
+
+  cout << endl;
+
 }
 
 void setInfo(string id, string name, string address, double gpa)

@@ -13,12 +13,19 @@ int main(int argc, char *argv[])
 {
 
   ifstream ifs;
-  ifs.open("input.txt");
+  ifs.open("input-sorted.txt");
   vector<Student*> vect;
 
   cout << "\n\nAdding student objects to our vector.\n\n";
 
   addFileToVector(ifs, vect);
+
+  /*Display all Student Records*/
+  for(int i = 0; i < vect.size() ; i++)
+  {
+    vect[i]->display();
+    cout << "\n ============================ \n";
+  }
 
   return 0;
 
