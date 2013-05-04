@@ -6,4 +6,8 @@ I then added the grades in manually.
 
 # Compilation and Memory Checking
 
-Blah blah blah.
+    $ g++ -g main.cpp ../student.* -o lab4
+    $ ./lab4
+    $ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./lab4
+
+Currently has memory leaks.
