@@ -61,6 +61,15 @@ void Student::display()
   cout << "Name: " << name << endl;
   cout << "Address: " << address << endl;
   cout << "GPA: " << gpa << endl;
+ 
+  /* Display student grades */ 
+  for(int i = 0 ; i < grades.size() ; i++)
+  {
+    cout << grades[i] << ", ";
+  }
+
+  cout << endl;
+
 }
 
 void setInfo(string id, string name, string address, double gpa)
@@ -98,6 +107,11 @@ void Student::setGpa(double gpa)
   gpa = gpa;
 }
 
+void Student::addGrade(double grade)
+{
+  grades.push_back(grade);
+}
+
 string Student::getId()
 {
   return id;
@@ -116,4 +130,9 @@ string Student::getAddress()
 double Student::getGpa()
 {
   return gpa;
+}
+
+const vector<double> Student::getGrades()
+{
+  return grades;
 }
