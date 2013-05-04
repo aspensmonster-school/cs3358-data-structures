@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
   addFileToVector(ifs, vect);
 
   /*Display all Student Records*/
+
   for(int i = 0; i < vect.size() ; i++)
   {
     vect[i]->display();
@@ -29,6 +30,8 @@ int main(int argc, char *argv[])
   }
 
   /* Search for an ID not on the ends */
+
+  cout << "Searching for ID not on ends of list." << endl;
 
   string mid = "1935";
   Student* middle = searchId(vect,mid,0,vect.size());
@@ -38,9 +41,12 @@ int main(int argc, char *argv[])
     cout << "\n +-------------------+ \n" << endl;
     cout << "Found Id " << mid << endl;
     middle->display();
-  }
+    cout << "\n +-------------------+ \n" << endl;
+   }
 
   /* Search for an ID on the left */
+
+  cout << "Searching for ID on left end." << endl;
 
   string l = "588";
   Student* left = searchId(vect,l,0,vect.size());
@@ -50,9 +56,12 @@ int main(int argc, char *argv[])
     cout << "\n +-------------------+ \n" << endl;
     cout << "Found Id " << l << endl;
     left->display();
-  }
+    cout << "\n +-------------------+ \n" << endl;
+   }
 
   /* Search for an ID on the right */
+
+  cout << "Searching for ID on right end." << endl;
 
   string r = "32538";
   Student* right = searchId(vect,r,0,vect.size());
@@ -62,9 +71,12 @@ int main(int argc, char *argv[])
     cout << "\n +-------------------+ \n" << endl;
     cout << "Found Id " << r << endl;
     right->display();
-  }
+    cout << "\n +-------------------+ \n" << endl;
+   }
 
   /* Search for an ID not in the list */
+
+  cout << "Searching for ID not in list." << endl;
 
   string nothere = "3";
   Student* notin = searchId(vect,nothere,0,vect.size());
@@ -74,12 +86,14 @@ int main(int argc, char *argv[])
     cout << "\n +-------------------+ \n" << endl;
     cout << "Found Id " << nothere << endl;
     notin->display();
-  }
+    cout << "\n +-------------------+ \n" << endl;
+   }
   else
   {
     cout << "\n +-------------------+ \n" << endl;
     cout << "Id " << nothere << " not in vector." << endl;
-  }
+    cout << "\n +-------------------+ \n" << endl;
+   }
 
   return 0;
 
