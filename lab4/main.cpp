@@ -33,8 +33,6 @@ int main(int argc, char *argv[])
   string mid = "1935";
   Student* middle = searchId(vect,mid,0,vect.size());
 
-  cout << middle << endl; 
- 
   if(middle != NULL)
   {
     cout << "Found Id " << mid << endl;
@@ -43,9 +41,40 @@ int main(int argc, char *argv[])
 
   /* Search for an ID on the left */
 
+  string l = "588";
+  Student* left = searchId(vect,l,0,vect.size());
+
+  if(left != NULL)
+  {
+    cout << "Found Id " << l << endl;
+    left->display();
+  }
+
   /* Search for an ID on the right */
 
+  string r = "32538";
+  Student* right = searchId(vect,r,0,vect.size());
+
+  if(right != NULL)
+  {
+    cout << "Found Id " << r << endl;
+    right->display();
+  }
+
   /* Search for an ID not in the list */
+
+  string nothere = "3";
+  Student* notin = searchId(vect,nothere,0,vect.size());
+
+  if(notin != NULL)
+  {
+    cout << "Found Id " << nothere << endl;
+    notin->display();
+  }
+  else
+  {
+    cout << "Id " << nothere << " not in vector." << endl;
+  }
 
   return 0;
 
@@ -112,7 +141,7 @@ Student* searchId(vector<Student*>& list, string target, int min, int max)
     /* The whole atoi(string.c_str()) is REALLY tacky. Should get around to 
        fixing that eventually */
 
-    int mid = ((max-min)/2);
+    int mid = ((max+min)/2);
     cout << "Calculated middle id: " << list[mid]->getId() << endl;
 
     if(atoi(list[mid]->getId().c_str()) > atoi(target.c_str()))
