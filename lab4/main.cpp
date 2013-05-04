@@ -95,6 +95,15 @@ int main(int argc, char *argv[])
     cout << "\n +-------------------+ \n" << endl;
    }
 
+  /* Erase the students and vector to get rid of memleaks. */
+
+  for(int i = 0 ; i < vect.size() ; i++)
+  {
+    delete vect[i];
+  }
+
+  vect.erase(vect.begin(),vect.end());
+
   return 0;
 
 }
