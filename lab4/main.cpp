@@ -8,6 +8,7 @@
 using namespace std;
 
 void addFileToVector(ifstream&,vector<Student*>&);
+Student* searchId(vector<Student*>&,string,int,int);
 
 int main(int argc, char *argv[])
 {
@@ -26,6 +27,25 @@ int main(int argc, char *argv[])
     vect[i]->display();
     cout << "\n ============================ \n";
   }
+
+  /* Search for an ID not on the ends */
+
+  string mid = "1935";
+  Student* middle = searchId(vect,mid,0,vect.size());
+
+  cout << middle << endl; 
+ 
+  if(middle != NULL)
+  {
+    cout << "Found Id " << mid << endl;
+    middle->display();
+  }
+
+  /* Search for an ID on the left */
+
+  /* Search for an ID on the right */
+
+  /* Search for an ID not in the list */
 
   return 0;
 
@@ -76,5 +96,35 @@ void addFileToVector(ifstream& input,vector<Student*>& vec)
 
   /* Put ifs seeker back to beginning of file stream */
   input.seekg(0, ios::beg);
+
+}
+
+Student* searchId(vector<Student*>& list, string target, int min, int max)
+{
+ 
+  if(max < min)
+  {
+    return NULL;
+  }
+  else 
+  {
+
+    int mid = ((max-min)/2);
+
+    if(list[mid]->getId() > target)
+    {
+      return searchId(list,target,min,mid-1);
+    }
+    else
+    if(list[mid]->getId() < target)
+    {
+      return searchId(list,target,mid+1,max);
+    }
+    else
+    {
+      return list[mid];
+    }
+
+  }
 
 }

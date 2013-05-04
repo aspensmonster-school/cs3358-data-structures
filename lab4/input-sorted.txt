@@ -12,6 +12,8 @@
 100;90;80;70;50;99;98;88;76;80;
 7040;Derenthal;2566 High Trail Ct, Chula Vista, CA, 91914-4151;3.6
 100;90;80;70;50;99;98;88;76;80;
+7126;Katharina Castiola;706 N troy St, Chicago, IL, 60612-1034;3.2
+100;90;80;70;50;99;98;88;76;80;
 8674;Wes Lichota;2693 Bingham Dr, Upper Saint Clair, PA, 15241-3900;2.5
 100;90;80;70;50;99;98;88;76;80;
 10859;Brittni Crawn;1791 Avati Ct, San Jose, CA, 95131-2506;2.5
@@ -27,8 +29,6 @@
 19317;Sindy Klickman;3630 Gardens Pkwy, Palm Beach Gardens, FL, 33410-2779;0.3
 100;90;80;70;50;99;98;88;76;80;
 24211;Eldridge Lammel;11409 Sequoia Ln, Beltsville, MD, 20705-1464;3.4
-100;90;80;70;50;99;98;88;76;80;
-7126;Katharina Castiola;706 N troy St, Chicago, IL, 60612-1034;3.2
 100;90;80;70;50;99;98;88;76;80;
 29528;Kwilosz;16600 Valderama Way, Edmond, OK, 73012-8925;2.1
 100;90;80;70;50;99;98;88;76;80;
