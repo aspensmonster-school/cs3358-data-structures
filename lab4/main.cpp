@@ -109,15 +109,21 @@ Student* searchId(vector<Student*>& list, string target, int min, int max)
   else 
   {
 
-    int mid = ((max-min)/2);
+    /* The whole atoi(string.c_str()) is REALLY tacky. Should get around to 
+       fixing that eventually */
 
-    if(list[mid]->getId() > target)
+    int mid = ((max-min)/2);
+    cout << "Calculated middle id: " << list[mid]->getId() << endl;
+
+    if(atoi(list[mid]->getId().c_str()) > atoi(target.c_str()))
     {
+      cout << "Bottom half" << endl;
       return searchId(list,target,min,mid-1);
     }
     else
-    if(list[mid]->getId() < target)
+    if(atoi(list[mid]->getId().c_str()) < atoi(target.c_str()))
     {
+      cout << "Top half" << endl;
       return searchId(list,target,mid+1,max);
     }
     else
