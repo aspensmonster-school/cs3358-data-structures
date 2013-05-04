@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 
   if(middle != NULL)
   {
+    cout << "\n +-------------------+ \n" << endl;
     cout << "Found Id " << mid << endl;
     middle->display();
   }
@@ -46,6 +47,7 @@ int main(int argc, char *argv[])
 
   if(left != NULL)
   {
+    cout << "\n +-------------------+ \n" << endl;
     cout << "Found Id " << l << endl;
     left->display();
   }
@@ -57,6 +59,7 @@ int main(int argc, char *argv[])
 
   if(right != NULL)
   {
+    cout << "\n +-------------------+ \n" << endl;
     cout << "Found Id " << r << endl;
     right->display();
   }
@@ -68,11 +71,13 @@ int main(int argc, char *argv[])
 
   if(notin != NULL)
   {
+    cout << "\n +-------------------+ \n" << endl;
     cout << "Found Id " << nothere << endl;
     notin->display();
   }
   else
   {
+    cout << "\n +-------------------+ \n" << endl;
     cout << "Id " << nothere << " not in vector." << endl;
   }
 
@@ -142,17 +147,14 @@ Student* searchId(vector<Student*>& list, string target, int min, int max)
        fixing that eventually */
 
     int mid = ((max+min)/2);
-    cout << "Calculated middle id: " << list[mid]->getId() << endl;
 
     if(atoi(list[mid]->getId().c_str()) > atoi(target.c_str()))
     {
-      cout << "Bottom half" << endl;
       return searchId(list,target,min,mid-1);
     }
     else
     if(atoi(list[mid]->getId().c_str()) < atoi(target.c_str()))
     {
-      cout << "Top half" << endl;
       return searchId(list,target,mid+1,max);
     }
     else
