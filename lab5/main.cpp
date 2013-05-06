@@ -105,6 +105,6 @@ void addFileToVector(ifstream& input,vector<Student*>& vec)
 void quickSort(vector<Student*>& list, int min, int max)
 {
 
-  asdf; 
+  /* Implement recursive quicksort */
 
 }
