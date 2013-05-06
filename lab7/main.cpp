@@ -11,36 +11,41 @@
 
 using namespace std;
 
-void addFileToList(ifstream&,list<Student*>&)
+void addFileToList(ifstream&,list<Student*>&);
 
 int main(int argc, char *argv[])
 {
 
-  list<Student*> list;
+  list<Student*> stuList;
+  list<Student*>::iterator iterList;
   ifstream ifs;
   ifs.open("input.txt");
-  addFileToList(ifs, list);
+  addFileToList(ifs, stuList);
 
   cout << "\n\nDISPLAYING CONTENTS\n\n";
 
-  
+  for(iterList=stuList.begin() ; iterList != stuList.end() ; ++iterList)
+  {
+    (*iterList)->display();
+  } 
 
   cout << "\n\nCONTENTS DISPLAYED\n\n";
   cout << "\n\nDELETING LIST ELEMENTS\n\n";
 
-  list->deleteListContents();
-  list->deleteListContents();
-
-  for(int i = 0; i < 2 ; i++)
+  for(iterList=stuList.begin() ; iterList != stuList.end() ; ++iterList)
   {
-    addFileToList(ifs, list);
+    delete *iterList;
   }
 
-  list->displayContents();
-  
-  list->deleteListContents();
-  list->deleteListContents();
-  list->deleteListContents();
+  stuList.erase(stuList.begin(),stuList.end());
+
+  for(iterList=stuList.begin() ; iterList != stuList.end() ; ++iterList)
+  {
+    (*iterList)->display();
+  }
+
+
+/*
 
   cout << "Putting insert() through its paces." << endl;
 
@@ -56,13 +61,6 @@ int main(int argc, char *argv[])
 
   Student* middle = new Student();
   list->insert(middle,6);
-
-  /* TODO: if the user inserts the same Student object into the list
-   * multiple times, the program segfaults because two nodes are ref-
-   * erencing the same memory spot. So when we go to delete the second
-   * instance in the list a la `delete foo` the program barfs because
-   * we're trying to delete memory that's already deleted!
-   */
 
   Student* farout = new Student();
   list->insert(farout,100);
@@ -84,6 +82,8 @@ int main(int argc, char *argv[])
   list->displayContents();
 
   delete list;
+
+*/
 
 /*
 
