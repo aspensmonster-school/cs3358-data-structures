@@ -1,0 +1,5 @@
+Binary Search Tree. Similar to Binary Searching, only rather than having a 
+sorted array, you have nodes that each have two leaves.
+
+I'm guessing this lab had us implement insertion, searching, and deletion 
+operations on the tree. Deletion is the biggest pain of the three.

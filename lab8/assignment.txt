@@ -1,0 +1,2 @@
+Implement a hashing algorithm. Presumably, we'd hash the student ID and store 
+student objects in buckets.
