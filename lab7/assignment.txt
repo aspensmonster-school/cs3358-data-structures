@@ -1,1 +1,2 @@
-redo assignment 1a and 1b but with STL list containers.
+redo assignment 1a and 2a but with STL list containers. Also investigated 
+exception handling.
