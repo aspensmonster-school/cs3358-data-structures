@@ -106,15 +106,29 @@ void addFileToVector(ifstream& input,vector<Student*>& vec)
 
 }
 
+/*
+ * Because plaigarism is bad, this is what I based this algo off of:
+ * http://www.algolist.net/Algorithms/Sorting/Quicksort
+ * Thought it was simpler than having to write another rebuilder function, 
+ * even if doing it that way is more elegant.
+ *
+ * ALSO: This is NOT an in-place implementation.
+ *
+ */
+
+ /* While quicksort averages nlog(n), it has no way of knowing how 
+  * "well-sorted" a list may already be. It still has to partition through,
+  * Doing lots of comparisons, even if the list is completely sorted.
+  */
+
 void quickSort(vector<Student*>& list, int left, int right)
 {
+
   int min = left;
   int max = right;
-  /* Implement recursive quicksort */
-
   int pivot = atoi(list[(min+max)/2]->getId().c_str());
 
-  /*Start partititioning*/
+  /*Start partitioning*/
   while( min <= max )
   {
     /*find a value left of pivot that is NOT less than pivot so we can swap */
@@ -128,7 +142,7 @@ void quickSort(vector<Student*>& list, int left, int right)
       max--;
     }
     /*We might have a pair that is swappable. Let's check */
-    if( min <= max)
+    if( min <= max )
     {
       /* Yep. Swappable. Swap time. */
       Student* temp;
@@ -137,6 +151,11 @@ void quickSort(vector<Student*>& list, int left, int right)
       list[max] = temp;
       min++;
       max--;
+      /* Note: If the two elements are equal (Same pointer, not just same ID)
+       * I wonder if my copy constructor will work correctly. Not sure how to 
+       * go about testing that, though I think it should work since I check
+       * for self-assign.
+       */
     }
 
   } 
