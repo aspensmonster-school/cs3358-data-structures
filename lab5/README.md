@@ -1,7 +1,7 @@
 # About
 
 This program implements quicksort for a vector of Student pointers, sorting 
-by Student Id.
+by Student Id. It is NOT an in-place implementation.
 
 # Compilation and Memory Checking
 

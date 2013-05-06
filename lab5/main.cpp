@@ -31,7 +31,11 @@ int main(int argc, char *argv[])
 
   /* Sort the vector via quicksort algorithm */
 
-  quickSort(vect,0,vect.size());
+  cout << "\n\nProceeding to Quicksort\n\n";
+
+  quickSort(vect,0,vect.size()-1);
+
+  cout << "\n\nList should be sorted now\n\n";
 
   /* Display sorted list */
 
@@ -102,9 +106,49 @@ void addFileToVector(ifstream& input,vector<Student*>& vec)
 
 }
 
-void quickSort(vector<Student*>& list, int min, int max)
+void quickSort(vector<Student*>& list, int left, int right)
 {
-
+  int min = left;
+  int max = right;
   /* Implement recursive quicksort */
+
+  int pivot = atoi(list[(min+max)/2]->getId().c_str());
+
+  /*Start partititioning*/
+  while( min <= max )
+  {
+    /*find a value left of pivot that is NOT less than pivot so we can swap */
+    while( atoi(list[min]->getId().c_str()) < pivot )
+    {
+      min++;
+    }
+    /*find a value right of pivot that is NOT more than pivot so we can swap */
+    while( atoi(list[max]->getId().c_str()) > pivot )
+    {
+      max--;
+    }
+    /*We might have a pair that is swappable. Let's check */
+    if( min <= max)
+    {
+      /* Yep. Swappable. Swap time. */
+      Student* temp;
+      temp = list[min];
+      list[min] = list[max];
+      list[max] = temp;
+      min++;
+      max--;
+    }
+
+  } 
+
+  /* Partitions Sorted Around Pivot. Repeat. */
+  if(left < max)
+  {
+    quickSort(list, left, max);
+  }
+  if(min < right)
+  {
+    quickSort(list, min, right);
+  } 
 
 }
