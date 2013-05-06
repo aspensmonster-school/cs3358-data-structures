@@ -1,0 +1,40 @@
+10859;Brittni Crawn;1791 Avati Ct, San Jose, CA, 95131-2506;2.5
+100;90;80;70;50;99;98;88;76;80;
+588;Marcellus Odien;2510 Holly Brook Ln, Arlington, TX, 76006-6718;3.2
+100;90;80;70;50;99;98;88;76;80;
+1935;Jacinto Nogueda;515 W Seventh St, Erie, PA, 16502-1334;4.0
+100;90;80;70;50;99;98;88;76;80;
+19317;Sindy Klickman;3630 Gardens Pkwy, Palm Beach Gardens, FL, 33410-2779;0.3
+100;90;80;70;50;99;98;88;76;80;
+29528;Kwilosz;16600 Valderama Way, Edmond, OK, 73012-8925;2.1
+100;90;80;70;50;99;98;88;76;80;
+18466;Larisa Alai;260 N Lake Shore Way, Lake Alfred, FL, 33850-2036;3.7
+100;90;80;70;50;99;98;88;76;80;
+14316;Tomika Cooey;118 Black Duck Ct, Cambridge, MD, 21613-2912;3.7
+100;90;80;70;50;99;98;88;76;80;
+6932;Tabetha Hollinghurst;10410 Countrywood Ln, Hudson, FL, 34667-6683;1.9
+100;90;80;70;50;99;98;88;76;80;
+32299;Lonna Dalee;2112 Benson Ave, Apt 1, Brooklyn, NY, 11214-4912;3.0
+100;90;80;70;50;99;98;88;76;80;
+30759;Ellsworth Buess;60 Wilder St, Peterborough, NH, 03458-1067;4.0
+100;90;80;70;50;99;98;88;76;80;
+32538;Loni Mildred;9105 Arch Hill Ct, Richmond, VA, 23236-2725;2.5
+100;90;80;70;50;99;98;88;76;80;
+16732;Trudie Memmo;3418 Cypressdale Ct, Spring, TX, 77388-5175;2.2
+100;90;80;70;50;99;98;88;76;80;
+5613;Hannelore Cernansy;201 Holmes Rd, Apt 106, Holmes, PA, 19043-1431;3.9
+100;90;80;70;50;99;98;88;76;80;
+7040;Derenthal;2566 High Trail Ct, Chula Vista, CA, 91914-4151;3.6
+100;90;80;70;50;99;98;88;76;80;
+8674;Wes Lichota;2693 Bingham Dr, Upper Saint Clair, PA, 15241-3900;2.5
+100;90;80;70;50;99;98;88;76;80;
+3028;Boyce Erdelt;538 Elbridge Dr NW, Atlanta, GA, 30318-8138;2.5
+100;90;80;70;50;99;98;88;76;80;
+3388;Retta Goreczny;1300 Professional Dr, Ste 102, Myrtle Beach, SC, 29577-5768;2.5
+100;90;80;70;50;99;98;88;76;80;
+24211;Eldridge Lammel;11409 Sequoia Ln, Beltsville, MD, 20705-1464;3.4
+100;90;80;70;50;99;98;88;76;80;
+11071;Jae Nabhan;365 Pineapple St, Englewood, FL, 34223-2835;0.9
+100;90;80;70;50;99;98;88;76;80;
+27126;Katharina Castiola;706 N troy St, Chicago, IL, 60612-1034;3.2
+100;90;80;70;50;99;98;88;76;80;

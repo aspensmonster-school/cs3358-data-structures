@@ -1,2 +1,41 @@
-redo assignment 1a and 2a but with STL list containers. Also investigated 
-exception handling.
+CS3358
+Programming Project 1(A) and 1(B) The linked list - Reference: chapter 17:
+
+1 (A)
+
+  a. Create a linked list of 20 student records. Each node is a node of one
+student record.
+
+  b. Each student record consists of student ID, student name, Student address,
+and GPA.
+
+  c. The student records must be defined as student object class with member
+functions of APPEND and DISPLAY.
+
+  d. Display the linked list of student records.
+
+  e. You need to turn in hard copy of source program and output of the linked
+list of student records.
+
+     For all assignments in my class:
+     You may optionally use template or container in C++ if you wish.
+     You may use Java if you wish. Please high light on the turn in if you do
+either or both.
+
+1 (B) [Make it a doubly linked list.] [display from back]
+
+  f. Create a linked list of 20 student records.
+
+  g. The input records should not be sorted.
+
+  h. The output of the linked list should be sorted by using "insert" and
+"append" functions. Display both the unsorted input and sorted output records.
+
+  i. Delete the 15th record from the sorted list and display the resulted sorted
+list.
+
+  j. Insert a 10th record and display the resulted sorted list.
+
+  k. Turn in with hard copy and must be professional and the turn in should
+include the source Program, and the 4 displayed outputs - unsorted records, the
+sorted list, the list after deletion, the list after insertion.
