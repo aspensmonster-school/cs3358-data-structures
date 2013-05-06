@@ -10,4 +10,3 @@ I then added the grades in manually.
     $ ./lab4
     $ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./lab4
 
-Currently has memory leaks. 
