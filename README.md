@@ -7,7 +7,7 @@ root directory (the Student objects, for example).
 
 # Checking individual labs
 
-Each lab is tagged. run `git tag` to see a list. The highest increment of 
+Each lab is tagged. Run `git tag` to see a list. The highest increment of 
 each tag for each lab is the ideal one to run. I.e., checkout v6.1 rather 
 than v6.0. One may run `git checkout sometag` and compile and run the program 
 as it existed at the time of turning it in. Future work may have overwritten 
@@ -15,7 +15,10 @@ or combined past work as time went on. Example gradeflow is below. Each tag
 has a readme in the respective lab with specific instructions.
 
     $ git clone http://github.com/aggroskater/cs3358-data-structures.git
+    $ cd cs3358-data-structures
     $ git checkout v3.a.0
+    $ cd lab3
+    $ vim README.md
     $ g++ main.cpp queue.* ../student.* ../lab1/ll.* -g -o lab3
     $ ./lab3
     $ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./lab3
