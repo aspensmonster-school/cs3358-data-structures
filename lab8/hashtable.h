@@ -26,6 +26,8 @@ class HashTable
     Student* retrieve(int);
     void remove(int);
 
+    void showState();
+
 };
 
 #endif

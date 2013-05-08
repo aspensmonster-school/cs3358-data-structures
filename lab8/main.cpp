@@ -36,9 +36,21 @@ int main(int argc, char *argv[])
 
   cout << "Doing hashy things here." << endl;
 
+  cout << "Showing table state before insertion." << endl;
+
+  table.showState();
+
   table.insert(vect[3]);
 
+  cout << "Showing table state after insertion." << endl;
+
+  table.showState();
+
+  cout << "Showing table state after removal." << endl;
+
   table.remove(atoi(vect[3]->getId().c_str()));
+
+  table.showState();
 
   return 0;
 

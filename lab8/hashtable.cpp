@@ -5,7 +5,7 @@
 
 HashTable::HashTable()
 {
-  for(int i = 0; i < 100; i++)
+  for(int i = 0; i < 101; i++)
   {
     HashNode h;
     table[i] = h;
@@ -25,13 +25,9 @@ int HashTable::hash(int key)
 
 void HashTable::insert(Student* student)
 {
-  cout << "In insert" << endl;
   int key = atoi(student->getId().c_str());
-  cout << "Key set" << endl;
   int index = hash(key);
-  cout << "Index set" << endl;
   table[index].set(student);
-  cout << "table[index] set" << endl;
 }
 
 Student* HashTable::retrieve(int key)
@@ -122,4 +118,27 @@ void HashTable::remove(int key)
   follow->setNext(lead->getNext());
   delete lead; 
 
+}
+
+void HashTable::showState()
+{
+  for(int i = 0 ; i < 101 ; i++)
+  {
+    if(table[i].getKey() < 1)
+    {
+      continue;
+    }
+    else
+    {
+      HashNode* temp = &table[i];
+      int j = 0;
+      while(temp != NULL)
+      {
+        cout << "Row " << i << " column " << j << " key " << temp->getKey()
+             << endl; 
+        j++;
+        temp = temp->getNext();
+      }
+    }
+  } 
 }
