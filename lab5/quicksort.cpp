@@ -1,6 +1,6 @@
-#include <vector>
-#include "../student.h"
+#include "quicksort.h"
 #include <cstdlib>
+#include "../student.h"
 
 using namespace std;
 
@@ -14,7 +14,23 @@ quicksort::~quicksort()
   /* Ditto */
 }
 
-void sort(vector<Student*>& list, int left, int right)
+/*
+ * Because plaigarism is bad, this is what I based this algo off of:
+ * http://www.algolist.net/Algorithms/Sorting/Quicksort
+ * Thought it was simpler than having to write another rebuilder function, 
+ * even if doing it that way is more elegant.
+ *
+ * ALSO: This is NOT an in-place implementation.
+ *
+ */
+
+/* While quicksort averages nlog(n), it has no way of knowing how 
+ * "well-sorted" a list may already be. It still has to partition through,
+ * Doing lots of comparisons, even if the list is completely sorted.
+ */
+
+
+void quicksort::sorter(vector<Student*>& list, int left, int right)
 {
 
   int min = left;
@@ -56,11 +72,11 @@ void sort(vector<Student*>& list, int left, int right)
   /* Partitions Sorted Around Pivot. Repeat. */
   if(left < max)
   {
-    sort(list, left, max);
+    sorter(list, left, max);
   }
   if(min < right)
   {
-    sort(list, min, right);
+    sorter(list, min, right);
   }
 
 }

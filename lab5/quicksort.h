@@ -4,15 +4,20 @@
 #include <vector>
 #include "../student.h"
 
+using namespace std;
+
 class quicksort
 {
+
+  private:
+
   public:
 
   quicksort();
   virtual ~quicksort();
 
-  void sort(vector<Student*>&,int,int);
+  void sorter(vector<Student*>&,int,int);
 
-}
+};
 
 #endif
