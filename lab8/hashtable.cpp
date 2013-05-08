@@ -14,7 +14,7 @@ HashTable::HashTable()
 
 HashTable::~HashTable()
 {
-
+  
 }
 
 int HashTable::hash(int key)
@@ -134,6 +134,7 @@ void HashTable::showState()
       int j = 0;
       while(temp != NULL)
       {
+        cout << "temp ptr val: " << temp << endl;
         cout << "Row " << i << " column " << j << " key " << temp->getKey();
         cout << endl; 
         j++;
