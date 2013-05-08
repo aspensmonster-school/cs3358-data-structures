@@ -3,3 +3,26 @@ sorted array, you have nodes that each have two leaves.
 
 I'm guessing this lab had us implement insertion, searching, and deletion 
 operations on the tree. Deletion is the biggest pain of the three.
+
+Edit: Found the actual assignment sheet. Replicating below.
+
+Project 9 - Creating Binary Search Tree
+
+- Create an array, a vector or a linked list of student records (20+ records) 
+which is unsorted.
+
+- Student records should include Student ID, Name, and other attributes as in 
+previous projects.
+
+- Display the unsorted list from above array, vector, or linked list.
+
+- Create a binary search tree for the above list.
+
+- Display the binary search tree by using in-order traversal (sorted result).
+
+- Search two nodes (records) in the middle of the binary search tree.
+
+- Delete two nodes in the middle of the binary search tree.
+
+- Display again the binary search tree by using in-order traversal (sorted 
+result) after the deletion.
