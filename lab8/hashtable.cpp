@@ -47,42 +47,73 @@ void HashTable::remove(int key)
 {
   int index = hash(id);
 
-  HashNode* temp = &table[index];
-  HashNode* temp2 = temp->getNext();
+  HashNode* follow = &table[index];
+  HashNode* lead = follow->getNext();
 
   /* Case 1: There is nothing in this index at all */
 
-  if(temp->getKey() < 0)
+  if(follow->getKey() < 0)
   {
     return; /* Nothing at this index. supplied key is not in table */
   }
 
   /* Case 2: There is only one node at this index */
 
-  if(temp2 == NULL)
+  if(lead == NULL && follow->getKey() == key)
   {
-    temp->unset(); 
+    follow->unset(); 
     return;
   }
+  else
+  if(follow->getKey() != key)
+  {
+    return; /* There's a single node in the index, and this isn't the one */
+  }
 
-  /* Case 3: There are multiple nodes at this index */  
+  /* Case 3: There are two or more nodes at this index */  
 
   /* Subcase 1: remove first node */
 
-  /* Subcase 2: remove middle node */
-
-  /* Subcase 3: remove end node */
-
-  if(temp->getKey() == key)
+  if(follow->getKey() == key)
   {
-    temp->set(temp2->getStudent()); 
-    delete temp2;
+    table[index] = *lead;
+    delete follow;
   }
 
-  while(temp2->getNext() != NULL)
+  /* Ok. We're not removing the first node. Let's find the node we are 
+   * removing (if it's in the list).
+   */
+
+  while(lead->getKey() != key && lead->getNext() != NULL)
   {
-    temp = temp2;
-    temp2 = temp2->getNext();
-  } 
+    follow = lead;
+    lead = lead->getNext();
+  }
+
+  /* Now, the node we're getting rid of is either somewhere in the middle 
+   * or at the end. We'll know if it's at the end because temp2 will be null
+   */
+
+  /* Subcase 2: end of list */
+
+  if(lead->getNext() == NULL && lead->getKey() == key)
+  {
+    delete lead; 
+    follow->setNext(NULL);
+    return;
+  }
+  else
+  if(lead->getKey() != key)
+  {
+    return; /* We're at the end and haven't found the node */
+  }
+  
+
+  /* Subcase 3: middle of list */
+
+  /* We know that lead has hit a match thanks to the while loop above */
+
+  follow->setNext(lead->getNext());
+  delete lead; 
 
 }

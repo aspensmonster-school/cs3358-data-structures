@@ -9,10 +9,7 @@ HashNode::HashNode()
 
 HashNode::~HashNode()
 {
-  if(flag)
-  {
-    delete stu;
-  }
+  
 }
 
 void HashNode::set(Student* student)
@@ -55,4 +52,22 @@ void HashNode::unset()
   next = NULL;
 }
 
+int HashNode::getKey()
+{
+  return key;
+}
 
+Student* HashNode::getStudent()
+{
+  return stu;
+}
+
+HashNode* HashNode::getNext()
+{
+  return next;
+}
+
+void HashNode::setNext(HashNode* ptr)
+{
+  next = ptr;
+}
