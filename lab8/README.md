@@ -42,7 +42,7 @@ node is NULL, and we then insert the object.
 
 # Compilation and Memory Checking
 
-    $ g++ -g main.cpp ../student.* -o lab4
-    $ ./lab4
+    $ g++ -g main.cpp hashtable.* hashnode.* ../student.* -o lab8
+    $ ./lab8
     $ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./lab8
 
