@@ -1,2 +1,4 @@
 Implement a hashing algorithm. Presumably, we'd hash the student ID and store 
 student objects in buckets. I'd go for chained buckets.
+
+Going to go with linked nodes.
