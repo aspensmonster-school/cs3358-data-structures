@@ -44,68 +44,6 @@ int main(int argc, char *argv[])
     (*iterList)->display();
   }
 
-
-/*
-
-  cout << "Putting insert() through its paces." << endl;
-
-  Student* empty = new Student();
-  list->insert(empty,10);
-
-  list->deleteListContents();
-
-  addFileToList(ifs, list);
-
-  Student* newhead = new Student();
-  list->insert(newhead,1);
-
-  Student* middle = new Student();
-  list->insert(middle,6);
-
-  Student* farout = new Student();
-  list->insert(farout,100);
-
-  cout << "Completed insertion paces." << endl;
-
-  list->deleteListContents();
-
-  cout << "New list made. Attempting to sort." << endl;
-
-  addFileToList(ifs, list); 
-
-  cout << "Beginning list sort." << endl;
-
-  list->sortById();
-
-  cout << "List (supposedly) sorted." << endl;
-
-  list->displayContents();
-
-  delete list;
-
-*/
-
-/*
-
-  list->deleteListContents();
-
-  cout << "\n\nLIST ELEMENTS DELETED\n\n";
-  cout << "\n\nDISPLAYING CONTENTS\n\n";
-
-  list->displayContents();
-*/
-//  list->displayContents();
-
-//  cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
-
-//  list->sortByName();
-/*
-  cout << "We will now delete the list. " << endl;
-
-  delete list;
-
-  cout << "List deleted." << endl;
-*/
   return 0;
 
 }
