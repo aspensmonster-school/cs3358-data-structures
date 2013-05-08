@@ -1,4 +1,5 @@
 #include "hashtable.h"
+#include "hashnode.h"
 #include <cstdlib>
 
 HashTable::HashTable()

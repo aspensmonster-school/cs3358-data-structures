@@ -34,6 +34,10 @@ int main(int argc, char *argv[])
 
   /* Do hash things here */
 
+  table.insert(vect[3]);
+
+  table.remove(atoi(vect[3]->getId().c_str()));
+
   return 0;
 
 }
