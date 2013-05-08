@@ -73,6 +73,12 @@ void HashTable::remove(int key)
 
   /* Subcase 3: remove end node */
 
+  if(temp->getKey() == key)
+  {
+    temp->set(temp2->getStudent()); 
+    delete temp2;
+  }
+
   while(temp2->getNext() != NULL)
   {
     temp = temp2;

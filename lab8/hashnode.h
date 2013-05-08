@@ -16,10 +16,13 @@ class HashNode
 
     HashNode();
     virtual ~HashNode(); 
+
     void set(Student*);
     void unset();
+
     int getKey();
     Student* getStudent();
     HashNode* getNext();
+    void setNext(HashNode*);
 
 };

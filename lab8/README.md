@@ -1,3 +1,7 @@
+# Author Warning
+
+I'm pretty sure I'm going about this in a braindead way.
+
 # Hashing
 
 This lab investigates hash structures. The goal is to have fast insertion,
