@@ -56,7 +56,7 @@ void HashTable::remove(int key)
 
   if(follow->getKey() < 0)
   {
-    cout << "Nothing to delete dummy." << endl;
+    //cout << "Nothing to delete dummy." << endl;
     return; /* Nothing at this index. supplied key is not in table */
   }
 
@@ -64,14 +64,14 @@ void HashTable::remove(int key)
 
   if(lead == NULL && follow->getKey() == key)
   {
-    cout << "Single node. Unsetting it." << endl;
+    //cout << "Single node. Unsetting it." << endl;
     follow->unset(); 
     return;
   }
   else
   if(follow->getKey() != key)
   {
-    cout << "Single node. Wrong key. Leaving as is." << endl;
+    //cout << "Single node. Wrong key. Leaving as is." << endl;
     return; /* There's a single node in the index, and this isn't the one */
   }
 
@@ -81,8 +81,10 @@ void HashTable::remove(int key)
 
   if(follow->getKey() == key)
   {
-    cout << "Attempting to delete first node." << endl;
+    //cout << "Attempting to delete first node." << endl;
     table[index] = *lead;
+
+    return;
     //delete follow;
     //You don't delete things off the stack, Preston.
   }
@@ -105,7 +107,7 @@ void HashTable::remove(int key)
 
   if(lead->getNext() == NULL && lead->getKey() == key)
   {
-    delete lead; 
+    delete lead;
     follow->setNext(NULL);
     return;
   }
@@ -139,7 +141,7 @@ void HashTable::showState()
       int j = 0;
       while(temp != NULL)
       {
-        cout << "temp ptr val: " << temp << endl;
+        //cout << "temp ptr val: " << temp << endl;
         cout << "Row " << i << " column " << j << " key " << temp->getKey();
         cout << endl; 
         j++;

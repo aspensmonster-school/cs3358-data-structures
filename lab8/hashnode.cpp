@@ -11,7 +11,7 @@ HashNode::HashNode()
 
 HashNode::~HashNode()
 {
-   
+
 }
 
 void HashNode::set(Student* student)
@@ -27,7 +27,7 @@ void HashNode::set(Student* student)
   {
     /* Create a new HashNode; this one is occupied */
  
-    HashNode* h = new HashNode;
+    HashNode* h = new HashNode();
     h->set(student); /* This will always hit the key < 0, since the HashNode
                      * constructor sets key to -1.
                      */

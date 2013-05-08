@@ -44,5 +44,5 @@ node is NULL, and we then insert the object.
 
     $ g++ -g main.cpp ../student.* -o lab4
     $ ./lab4
-    $ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./lab4
+    $ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./lab8
 
