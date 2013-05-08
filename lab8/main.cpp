@@ -52,6 +52,15 @@ int main(int argc, char *argv[])
 
   table.showState();
 
+  /* Delete our vector of students */
+
+  for(int i = 0 ; i < vect.size() ; i++)
+  {
+    delete vect[i];
+  }
+
+  vect.erase(vect.begin(),vect.end());
+
   return 0;
 
 }
