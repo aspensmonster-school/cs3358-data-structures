@@ -11,101 +11,58 @@
 
 using namespace std;
 
-void addFileToList(ifstream&,list<Student*>&)
+void addFileToList(ifstream&,list<Student*>&);
 
 int main(int argc, char *argv[])
 {
 
-  list<Student*> list;
+  list<Student*> stuList;
+  list<Student*>::iterator iterList;
   ifstream ifs;
   ifs.open("input.txt");
-  addFileToList(ifs, list);
+  addFileToList(ifs, stuList);
 
   cout << "\n\nDISPLAYING CONTENTS\n\n";
 
-  
+  for(iterList=stuList.begin() ; iterList != stuList.end() ; ++iterList)
+  {
+    (*iterList)->display();
+  } 
 
   cout << "\n\nCONTENTS DISPLAYED\n\n";
+  cout << "\n\nINSERTING AN ELEMENT\n\n";
+
+  iterList = stuList.begin();
+  Student* newStu = new Student();
+  advance(iterList,15);
+  stuList.insert(iterList,newStu);
+
+  (*iterList)->display();
+
+  cout << "\n\nNumber of elements: " << stuList.size() << endl << endl;
+
+  cout << "\n\nERASING AN ELEMENT\n\n";
+
+  stuList.erase(iterList);
+
+  cout << "\n\nNumber of elements: " << stuList.size() << endl << endl;
+
   cout << "\n\nDELETING LIST ELEMENTS\n\n";
 
-  list->deleteListContents();
-  list->deleteListContents();
-
-  for(int i = 0; i < 2 ; i++)
+  for(iterList=stuList.begin() ; iterList != stuList.end() ; ++iterList)
   {
-    addFileToList(ifs, list);
+    delete *iterList;
   }
 
-  list->displayContents();
-  
-  list->deleteListContents();
-  list->deleteListContents();
-  list->deleteListContents();
+  stuList.erase(stuList.begin(),stuList.end());
 
-  cout << "Putting insert() through its paces." << endl;
+  cout << "\n\nDisplaying (empty) list. (Shouldn't see any output here)\n\n";
 
-  Student* empty = new Student();
-  list->insert(empty,10);
+  for(iterList=stuList.begin() ; iterList != stuList.end() ; ++iterList)
+  {
+    (*iterList)->display();
+  }
 
-  list->deleteListContents();
-
-  addFileToList(ifs, list);
-
-  Student* newhead = new Student();
-  list->insert(newhead,1);
-
-  Student* middle = new Student();
-  list->insert(middle,6);
-
-  /* TODO: if the user inserts the same Student object into the list
-   * multiple times, the program segfaults because two nodes are ref-
-   * erencing the same memory spot. So when we go to delete the second
-   * instance in the list a la `delete foo` the program barfs because
-   * we're trying to delete memory that's already deleted!
-   */
-
-  Student* farout = new Student();
-  list->insert(farout,100);
-
-  cout << "Completed insertion paces." << endl;
-
-  list->deleteListContents();
-
-  cout << "New list made. Attempting to sort." << endl;
-
-  addFileToList(ifs, list); 
-
-  cout << "Beginning list sort." << endl;
-
-  list->sortById();
-
-  cout << "List (supposedly) sorted." << endl;
-
-  list->displayContents();
-
-  delete list;
-
-/*
-
-  list->deleteListContents();
-
-  cout << "\n\nLIST ELEMENTS DELETED\n\n";
-  cout << "\n\nDISPLAYING CONTENTS\n\n";
-
-  list->displayContents();
-*/
-//  list->displayContents();
-
-//  cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
-
-//  list->sortByName();
-/*
-  cout << "We will now delete the list. " << endl;
-
-  delete list;
-
-  cout << "List deleted." << endl;
-*/
   return 0;
 
 }
