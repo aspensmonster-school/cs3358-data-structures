@@ -11,7 +11,7 @@ class HashNode
 
   private:
 
-    int key = -1;
+    int key;
     Student* stu;
     HashNode* next;
 

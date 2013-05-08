@@ -3,14 +3,14 @@
 
 HashNode::HashNode()
 {
-  int key = -1;
+  key = -1;
   stu = NULL;
   next = NULL;
 }
 
 HashNode::~HashNode()
 {
-  
+   
 }
 
 void HashNode::set(Student* student)
