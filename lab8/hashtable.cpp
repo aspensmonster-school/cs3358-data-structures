@@ -1,6 +1,7 @@
 #include "hashtable.h"
 #include "hashnode.h"
 #include <cstdlib>
+#include <iostream>
 
 HashTable::HashTable()
 {
@@ -24,9 +25,13 @@ int HashTable::hash(int key)
 
 void HashTable::insert(Student* student)
 {
+  cout << "In insert" << endl;
   int key = atoi(student->getId().c_str());
+  cout << "Key set" << endl;
   int index = hash(key);
+  cout << "Index set" << endl;
   table[index].set(student);
+  cout << "table[index] set" << endl;
 }
 
 Student* HashTable::retrieve(int key)
