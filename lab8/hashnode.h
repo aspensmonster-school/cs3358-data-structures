@@ -14,11 +14,12 @@ class HashNode
 
   public:
 
-    HashNode(Student*);
-    virtual ~HashNode(bool); /* flag will instruct whether to delete Student
-                              * object or just the node
-                              */
+    HashNode();
+    virtual ~HashNode(); 
+    void set(Student*);
+    void unset();
     int getKey();
     Student* getStudent();
+    HashNode* getNext();
 
 };

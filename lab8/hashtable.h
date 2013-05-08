@@ -14,13 +14,14 @@ class HashTable
 
   private:
 
-    HashNode table[SIZE];
+    HashNode table[101];
 
   public:
 
     HashTable();
     virtual ~HashTable();
 
+    int hash(int);
     void insert(Student*);
     Student* retrieve(int);
     void remove(int);
