@@ -1,6 +1,10 @@
 # Author Warning
 
-I'm pretty sure I'm going about this in a braindead way.
+I'm pretty sure I'm going about this in a braindead way. And I'm supremely 
+confident that this code leaks like a sieve, because I'm mixing stack and 
+heap allocation in ways that only a zombie could. But it's 4AM and I still 
+have to write all of this up for the final. As long as you're able to read
+this, this code is not to be trusted.
 
 # Hashing
 
