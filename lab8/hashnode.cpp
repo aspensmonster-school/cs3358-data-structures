@@ -1,5 +1,6 @@
 #include "hashnode.h"
 #include <cstdlib>
+#include <iostream>
 
 HashNode::HashNode()
 {
@@ -26,14 +27,16 @@ void HashNode::set(Student* student)
   {
     /* Create a new HashNode; this one is occupied */
  
-    HashNode h;
-    h.set(student); /* This will always hit the key < 0, since the HashNode
+    HashNode* h = new HashNode;
+    h->set(student); /* This will always hit the key < 0, since the HashNode
                      * constructor sets key to -1.
                      */
 
     /* Update next; it will follow the chain until it gets to the end, and 
      * add HashNode h to it
      */
+
+/*
 
     HashNode* temp = this;
 
@@ -43,6 +46,26 @@ void HashNode::set(Student* student)
     }
 
     temp->next = &h;
+
+*/
+    cout << "Got a collision." << endl;
+    cout << "Current key: " << key << endl;
+    cout << "Next key: " << h->getKey() << endl;
+
+    if(next == NULL)
+    {
+      next = h;
+    }
+    else
+    {
+      HashNode* temp = next;
+      while(temp->getNext() != NULL)
+      {
+        temp = temp->getNext(); 
+      }
+      temp->setNext(h); 
+    }
+
   }
 }
 
