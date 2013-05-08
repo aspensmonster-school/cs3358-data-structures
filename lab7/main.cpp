@@ -30,6 +30,23 @@ int main(int argc, char *argv[])
   } 
 
   cout << "\n\nCONTENTS DISPLAYED\n\n";
+  cout << "\n\nINSERTING AN ELEMENT\n\n";
+
+  iterList = stuList.begin();
+  Student* newStu = new Student();
+  advance(iterList,15);
+  stuList.insert(iterList,newStu);
+
+  (*iterList)->display();
+
+  cout << "\n\nNumber of elements: " << stuList.size() << endl << endl;
+
+  cout << "\n\nERASING AN ELEMENT\n\n";
+
+  stuList.erase(iterList);
+
+  cout << "\n\nNumber of elements: " << stuList.size() << endl << endl;
+
   cout << "\n\nDELETING LIST ELEMENTS\n\n";
 
   for(iterList=stuList.begin() ; iterList != stuList.end() ; ++iterList)
@@ -38,6 +55,8 @@ int main(int argc, char *argv[])
   }
 
   stuList.erase(stuList.begin(),stuList.end());
+
+  cout << "\n\nDisplaying (empty) list. (Shouldn't see any output here)\n\n";
 
   for(iterList=stuList.begin() ; iterList != stuList.end() ; ++iterList)
   {
