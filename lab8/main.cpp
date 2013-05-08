@@ -52,6 +52,24 @@ int main(int argc, char *argv[])
 
   table.showState();
 
+  cout << "Throwing all students at table." << endl;
+
+  for(int i = 0 ; i < 20 ; i++)
+  {
+    table.insert(vect[i]);
+  }
+
+  table.showState();
+
+  cout << "Removing all of them." << endl;
+
+  for(int i = 0 ; i < 20 ; i++)
+  {
+    table.remove(atoi(vect[i]->getId().c_str()));
+  }
+
+  table.showState();
+
   /* Delete our vector of students */
 
   for(int i = 0 ; i < vect.size() ; i++)
