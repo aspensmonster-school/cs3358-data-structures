@@ -134,8 +134,8 @@ void HashTable::showState()
       int j = 0;
       while(temp != NULL)
       {
-        cout << "Row " << i << " column " << j << " key " << temp->getKey()
-             << endl; 
+        cout << "Row " << i << " column " << j << " key " << temp->getKey();
+        cout << endl; 
         j++;
         temp = temp->getNext();
       }
