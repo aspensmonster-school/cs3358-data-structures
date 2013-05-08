@@ -1,3 +1,6 @@
+#ifndef hashnode_h_
+#define hashnode_h_
+
 #include "../student.h"
 
 using namespace std;
@@ -26,3 +29,5 @@ class HashNode
     void setNext(HashNode*);
 
 };
+
+#endif

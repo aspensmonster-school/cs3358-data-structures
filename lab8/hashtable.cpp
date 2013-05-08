@@ -31,7 +31,7 @@ void HashTable::insert(Student* student)
 
 Student* HashTable::retrieve(int key)
 {
-  int index = hash(id);
+  int index = hash(key);
   
   HashNode* temp = &table[index];
 
@@ -46,7 +46,7 @@ Student* HashTable::retrieve(int key)
 
 void HashTable::remove(int key)
 {
-  int index = hash(id);
+  int index = hash(key);
 
   HashNode* follow = &table[index];
   HashNode* lead = follow->getNext();

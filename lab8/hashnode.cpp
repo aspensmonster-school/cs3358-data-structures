@@ -1,4 +1,5 @@
 #include "hashnode.h"
+#include <cstdlib>
 
 HashNode::HashNode()
 {
