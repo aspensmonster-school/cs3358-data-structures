@@ -1,3 +1,18 @@
+# Future Plans
+
+Dated: Wed May 15 2013 2331 CST
+
+I intend to enhance this portfolio over the summer, with an emphasis on 
+exploring all of the features of C++ and the STL. Particularly, I'd like to 
+investigate templatized versions of data structures (i.e., re-implement vector 
+and the like as a learning experience).
+
+I also intend to clone these efforts with C in a separate repository, 
+exploring C's specific features and using C to write custom allocators and the 
+like.
+
+# About
+
 Homework assignments for data structures class at Texas State University.
 Professor requires use of C++ or Java. I'd prefer to use C so that I can learn 
 it simultaneously, but specs are specs. Each lab assignment's focus is held in 
